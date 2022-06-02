@@ -1,4 +1,5 @@
 
+
 local ScreenGui = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local TextLabel = Instance.new("TextLabel")
@@ -13,19 +14,20 @@ local TextButton_8 = Instance.new("TextButton")
 local TextButton_9 = Instance.new("TextButton")
 local TextButton_10 = Instance.new("TextButton")
 local TextButton_11 = Instance.new("TextButton")
+local TextLabel_2 = Instance.new("TextLabel")
+local TextLabel_3 = Instance.new("TextLabel")
 local Openmain = Instance.new("Frame")
 local Open = Instance.new("TextButton")
 
 --Properties:
 
-ScreenGui.Parent = game.Workspace
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Main.Name = "Main"
 Main.Parent = ScreenGui
 Main.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 Main.Size = UDim2.new(0, 352, 0, 441)
-Main.Visible = false
 Main.Active = true
 Main.Draggable = true
 
@@ -49,9 +51,6 @@ TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton.TextScaled = true
 TextButton.TextSize = 14.000
 TextButton.TextWrapped = true
-TextButton.MouseButton1Down:connect(function()
-	Scripthere
-end)
 
 TextButton_2.Parent = Main
 TextButton_2.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
@@ -63,9 +62,6 @@ TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_2.TextScaled = true
 TextButton_2.TextSize = 14.000
 TextButton_2.TextWrapped = true
-NAMEOFBUTTONHERE.MouseButton1Down:connect(function()
-	Scripthere
-end)
 
 TextButton_3.Parent = Main
 TextButton_3.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
@@ -77,9 +73,6 @@ TextButton_3.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_3.TextScaled = true
 TextButton_3.TextSize = 14.000
 TextButton_3.TextWrapped = true
-NAMEOFBUTTONHERE.MouseButton1Down:connect(function()
-	Scripthere
-end)
 
 TextButton_4.Parent = Main
 TextButton_4.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
@@ -91,9 +84,6 @@ TextButton_4.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_4.TextScaled = true
 TextButton_4.TextSize = 14.000
 TextButton_4.TextWrapped = true
-NAMEOFBUTTONHERE.MouseButton1Down:connect(function()
-	Scripthere
-end)
 
 TextButton_5.Parent = Main
 TextButton_5.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
@@ -105,9 +95,6 @@ TextButton_5.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_5.TextScaled = true
 TextButton_5.TextSize = 14.000
 TextButton_5.TextWrapped = true
-NAMEOFBUTTONHERE.MouseButton1Down:connect(function()
-	Scripthere
-end)
 
 TextButton_6.Parent = Main
 TextButton_6.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
@@ -119,9 +106,6 @@ TextButton_6.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_6.TextScaled = true
 TextButton_6.TextSize = 14.000
 TextButton_6.TextWrapped = true
-NAMEOFBUTTONHERE.MouseButton1Down:connect(function()
-	Scripthere
-end)
 
 TextButton_7.Parent = Main
 TextButton_7.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
@@ -133,9 +117,6 @@ TextButton_7.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_7.TextScaled = true
 TextButton_7.TextSize = 14.000
 TextButton_7.TextWrapped = true
-NAMEOFBUTTONHERE.MouseButton1Down:connect(function()
-	Scripthere
-end)
 
 TextButton_8.Parent = Main
 TextButton_8.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
@@ -147,9 +128,6 @@ TextButton_8.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_8.TextScaled = true
 TextButton_8.TextSize = 14.000
 TextButton_8.TextWrapped = true
-NAMEOFBUTTONHERE.MouseButton1Down:connect(function()
-	Scripthere
-end)
 
 TextButton_9.Parent = Main
 TextButton_9.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
@@ -161,9 +139,6 @@ TextButton_9.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_9.TextScaled = true
 TextButton_9.TextSize = 14.000
 TextButton_9.TextWrapped = true
-NAMEOFBUTTONHERE.MouseButton1Down:connect(function()
-	Scripthere
-end)
 
 TextButton_10.Parent = Main
 TextButton_10.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
@@ -175,28 +150,49 @@ TextButton_10.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_10.TextScaled = true
 TextButton_10.TextSize = 14.000
 TextButton_10.TextWrapped = true
-NAMEOFBUTTONHERE.MouseButton1Down:connect(function()
-	Scripthere
-end)
 
 TextButton_11.Parent = Main
-TextButton_11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TextButton_11.Position = UDim2.new(0.886363626, 0, -0.0136054419, 0)
-TextButton_11.Size = UDim2.new(0, 40, 0, 45)
+TextButton_11.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+TextButton_11.Position = UDim2.new(0.886363626, 0, 0, 0)
+TextButton_11.Size = UDim2.new(0, 40, 0, 41)
 TextButton_11.Font = Enum.Font.SourceSans
 TextButton_11.Text = "X"
 TextButton_11.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextButton_11.TextScaled = true
 TextButton_11.TextSize = 14.000
 TextButton_11.TextWrapped = true
+TextButton_11.MouseButton1Down:connect(function()
+	Main.Visible = false
+end)
+
+TextLabel_2.Parent = Main
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.Position = UDim2.new(0.133522734, 0, 0.0929705203, 0)
+TextLabel_2.Size = UDim2.new(0, 247, 0, 30)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "Credits: iwanaplay1"
+TextLabel_2.TextColor3 = Color3.fromRGB(0, 255, 255)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+
+TextLabel_3.Parent = Main
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.Position = UDim2.new(0.133522734, 0, 0.902494311, 0)
+TextLabel_3.Size = UDim2.new(0, 247, 0, 30)
+TextLabel_3.Font = Enum.Font.SourceSans
+TextLabel_3.Text = "Discord Link: Coming Soon!"
+TextLabel_3.TextColor3 = Color3.fromRGB(0, 255, 255)
+TextLabel_3.TextScaled = true
+TextLabel_3.TextSize = 14.000
+TextLabel_3.TextWrapped = true
 
 Openmain.Name = "Openmain"
 Openmain.Parent = ScreenGui
 Openmain.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Openmain.Position = UDim2.new(0.905094922, 0, 0.893528223, 0)
 Openmain.Size = UDim2.new(0, 75, 0, 37)
-Openmain.Active = true
-Openmain.Draggable = true
+
 
 Open.Name = "Open"
 Open.Parent = Openmain
@@ -208,6 +204,7 @@ Open.TextColor3 = Color3.fromRGB(255, 255, 255)
 Open.TextScaled = true
 Open.TextSize = 14.000
 Open.TextWrapped = true
-NAMEOFBUTTONHERE.MouseButton1Down:connect(function()
-	Scripthere
+Open.MouseButton1Down:connect(function()
+	Openmain.Visible = true
+	Main.Visible = true
 end)
