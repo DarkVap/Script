@@ -1,23 +1,66 @@
 
 
+
+local vu = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+	vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+	wait(1)
+	vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+game.StarterGui:SetCore("SendNotification", {
+	Title = "Full Version";
+	Text = "Now Loading"; 
+	Duration = 60;
+})
+wait(1)
+
+game.StarterGui:SetCore("SendNotification", {
+	Title = "Bedwars DarkVap";
+	Text = "Made by iwanaplay1"; 
+	Duration = 60;
+})
+wait(1)
+game.StarterGui:SetCore("SendNotification", {
+	Title = "This is still in development";
+	Text = "Last Updated: 1 day ago"; 
+	Duration = 60;
+})
+
+
+
+
 local ScreenGui = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
-local TextLabel = Instance.new("TextLabel")
-local TextButton = Instance.new("TextButton")
-local TextButton_2 = Instance.new("TextButton")
-local TextButton_3 = Instance.new("TextButton")
-local TextButton_4 = Instance.new("TextButton")
-local TextButton_5 = Instance.new("TextButton")
-local TextButton_6 = Instance.new("TextButton")
-local TextButton_7 = Instance.new("TextButton")
-local TextButton_8 = Instance.new("TextButton")
-local TextButton_9 = Instance.new("TextButton")
-local TextButton_10 = Instance.new("TextButton")
-local TextButton_11 = Instance.new("TextButton")
-local TextLabel_2 = Instance.new("TextLabel")
-local TextLabel_3 = Instance.new("TextLabel")
-local Openmain = Instance.new("Frame")
-local Open = Instance.new("TextButton")
+local Combat = Instance.new("TextLabel")
+local Open1 = Instance.new("TextButton")
+local AutoClicker = Instance.new("TextButton")
+local KillAura = Instance.new("TextButton")
+local AntiKnockback = Instance.new("TextButton")
+local Open2 = Instance.new("TextButton")
+local Fly = Instance.new("TextButton")
+local Speed = Instance.new("TextButton")
+local NoClickDelay = Instance.new("TextButton")
+local AimAssist = Instance.new("TextButton")
+local Visuals = Instance.new("TextLabel")
+local Open3 = Instance.new("TextButton")
+local Risk = Instance.new("TextLabel")
+local Esp = Instance.new("TextButton")
+local Tracers = Instance.new("TextButton")
+local WinterTheme = Instance.new("TextButton")
+local LocalPlayer = Instance.new("TextLabel")
+local Open4 = Instance.new("TextButton")
+local FreeCam = Instance.new("TextButton")
+local AntiVoid = Instance.new("TextButton")
+local Close1 = Instance.new("TextButton")
+local Close3 = Instance.new("TextButton")
+local Close4 = Instance.new("TextButton")
+local Credits = Instance.new("TextLabel")
+local Open5 = Instance.new("TextButton")
+local Close5 = Instance.new("TextButton")
+local name = Instance.new("TextButton")
+local iwanaplay1 = Instance.new("TextButton")
+local Scripter = Instance.new("TextLabel")
+local Close2 = Instance.new("TextButton")
 
 --Properties:
 
@@ -26,185 +69,460 @@ ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Main.Name = "Main"
 Main.Parent = ScreenGui
-Main.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Main.Size = UDim2.new(0, 352, 0, 441)
-Main.Active = true
-Main.Draggable = true
+Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Main.Position = UDim2.new(0.02197803, 0, 0.0459290184, 0)
+Main.Size = UDim2.new(0, 112, 0, 26)
 
-TextLabel.Parent = Main
-TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.Size = UDim2.new(0, 352, 0, 39)
-TextLabel.Font = Enum.Font.SciFi
-TextLabel.Text = "Bedwars V1"
-TextLabel.TextColor3 = Color3.fromRGB(0, 255, 255)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
+Combat.Name = "Combat"
+Combat.Parent = Main
+Combat.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Combat.Size = UDim2.new(0, 88, 0, 26)
+Combat.Font = Enum.Font.SciFi
+Combat.Text = "Combat"
+Combat.TextColor3 = Color3.fromRGB(255, 255, 255)
+Combat.TextScaled = true
+Combat.TextSize = 14.000
+Combat.TextWrapped = true
 
-TextButton.Parent = Main
-TextButton.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
-TextButton.Position = UDim2.new(0, 0, 0.263038546, 0)
-TextButton.Size = UDim2.new(0, 137, 0, 37)
-TextButton.Font = Enum.Font.SciFi
-TextButton.Text = "Kill Aura"
-TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton.TextScaled = true
-TextButton.TextSize = 14.000
-TextButton.TextWrapped = true
-
-TextButton_2.Parent = Main
-TextButton_2.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
-TextButton_2.Position = UDim2.new(0, 0, 0.392290235, 0)
-TextButton_2.Size = UDim2.new(0, 137, 0, 37)
-TextButton_2.Font = Enum.Font.SciFi
-TextButton_2.Text = "Speed"
-TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_2.TextScaled = true
-TextButton_2.TextSize = 14.000
-TextButton_2.TextWrapped = true
-
-TextButton_3.Parent = Main
-TextButton_3.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
-TextButton_3.Position = UDim2.new(0, 0, 0.523809552, 0)
-TextButton_3.Size = UDim2.new(0, 137, 0, 37)
-TextButton_3.Font = Enum.Font.SciFi
-TextButton_3.Text = "Esp"
-TextButton_3.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_3.TextScaled = true
-TextButton_3.TextSize = 14.000
-TextButton_3.TextWrapped = true
-
-TextButton_4.Parent = Main
-TextButton_4.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
-TextButton_4.Position = UDim2.new(0, 0, 0.653061271, 0)
-TextButton_4.Size = UDim2.new(0, 137, 0, 37)
-TextButton_4.Font = Enum.Font.SciFi
-TextButton_4.Text = "Free Cam"
-TextButton_4.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_4.TextScaled = true
-TextButton_4.TextSize = 14.000
-TextButton_4.TextWrapped = true
-
-TextButton_5.Parent = Main
-TextButton_5.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
-TextButton_5.Position = UDim2.new(0, 0, 0.791383266, 0)
-TextButton_5.Size = UDim2.new(0, 137, 0, 37)
-TextButton_5.Font = Enum.Font.SciFi
-TextButton_5.Text = "Climb"
-TextButton_5.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_5.TextScaled = true
-TextButton_5.TextSize = 14.000
-TextButton_5.TextWrapped = true
-
-TextButton_6.Parent = Main
-TextButton_6.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
-TextButton_6.Position = UDim2.new(0.565340936, 0, 0.263038546, 0)
-TextButton_6.Size = UDim2.new(0, 137, 0, 37)
-TextButton_6.Font = Enum.Font.SciFi
-TextButton_6.Text = "Bed Breaker"
-TextButton_6.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_6.TextScaled = true
-TextButton_6.TextSize = 14.000
-TextButton_6.TextWrapped = true
-
-TextButton_7.Parent = Main
-TextButton_7.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
-TextButton_7.Position = UDim2.new(0.565340936, 0, 0.392290235, 0)
-TextButton_7.Size = UDim2.new(0, 137, 0, 37)
-TextButton_7.Font = Enum.Font.SciFi
-TextButton_7.Text = "AutoClicker"
-TextButton_7.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_7.TextScaled = true
-TextButton_7.TextSize = 14.000
-TextButton_7.TextWrapped = true
-
-TextButton_8.Parent = Main
-TextButton_8.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
-TextButton_8.Position = UDim2.new(0.565340936, 0, 0.523809493, 0)
-TextButton_8.Size = UDim2.new(0, 137, 0, 37)
-TextButton_8.Font = Enum.Font.SciFi
-TextButton_8.Text = "No Knockback"
-TextButton_8.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_8.TextScaled = true
-TextButton_8.TextSize = 14.000
-TextButton_8.TextWrapped = true
-
-TextButton_9.Parent = Main
-TextButton_9.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
-TextButton_9.Position = UDim2.new(0.565340936, 0, 0.653061211, 0)
-TextButton_9.Size = UDim2.new(0, 137, 0, 37)
-TextButton_9.Font = Enum.Font.SciFi
-TextButton_9.Text = "Sword Range"
-TextButton_9.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_9.TextScaled = true
-TextButton_9.TextSize = 14.000
-TextButton_9.TextWrapped = true
-
-TextButton_10.Parent = Main
-TextButton_10.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
-TextButton_10.Position = UDim2.new(0.565340936, 0, 0.791383207, 0)
-TextButton_10.Size = UDim2.new(0, 137, 0, 37)
-TextButton_10.Font = Enum.Font.SciFi
-TextButton_10.Text = "NoClickDelay"
-TextButton_10.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_10.TextScaled = true
-TextButton_10.TextSize = 14.000
-TextButton_10.TextWrapped = true
-
-TextButton_11.Parent = Main
-TextButton_11.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-TextButton_11.Position = UDim2.new(0.886363626, 0, 0, 0)
-TextButton_11.Size = UDim2.new(0, 40, 0, 41)
-TextButton_11.Font = Enum.Font.SourceSans
-TextButton_11.Text = "X"
-TextButton_11.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_11.TextScaled = true
-TextButton_11.TextSize = 14.000
-TextButton_11.TextWrapped = true
-TextButton_11.MouseButton1Down:connect(function()
-	Main.Visible = false
+Open1.Name = "Open1"
+Open1.Parent = Main
+Open1.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Open1.Position = UDim2.new(0.785714209, 0, 0, 0)
+Open1.Size = UDim2.new(0, 24, 0, 26)
+Open1.Font = Enum.Font.SourceSans
+Open1.Text = "+"
+Open1.TextColor3 = Color3.fromRGB(0, 0, 0)
+Open1.TextScaled = true
+Open1.TextSize = 14.000
+Open1.TextWrapped = true
+Open1.MouseButton1Click:Connect(function()
+	Open1.Visible = false
+	Close1.Visible = true
+	if AimAssist.Visible == false then
+	AimAssist.Visible = true
+	AutoClicker.Visible = true
+	KillAura.Visible = true
+	AntiKnockback.Visible = true
+		NoClickDelay.Visible = true	
+		end
 end)
 
-TextLabel_2.Parent = Main
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_2.Position = UDim2.new(0.133522734, 0, 0.0929705203, 0)
-TextLabel_2.Size = UDim2.new(0, 247, 0, 30)
-TextLabel_2.Font = Enum.Font.SourceSans
-TextLabel_2.Text = "Credits: iwanaplay1"
-TextLabel_2.TextColor3 = Color3.fromRGB(0, 255, 255)
-TextLabel_2.TextScaled = true
-TextLabel_2.TextSize = 14.000
-TextLabel_2.TextWrapped = true
-
-TextLabel_3.Parent = Main
-TextLabel_3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_3.Position = UDim2.new(0.133522734, 0, 0.902494311, 0)
-TextLabel_3.Size = UDim2.new(0, 247, 0, 30)
-TextLabel_3.Font = Enum.Font.SourceSans
-TextLabel_3.Text = "Discord Link: Coming Soon!"
-TextLabel_3.TextColor3 = Color3.fromRGB(0, 255, 255)
-TextLabel_3.TextScaled = true
-TextLabel_3.TextSize = 14.000
-TextLabel_3.TextWrapped = true
-
-Openmain.Name = "Openmain"
-Openmain.Parent = ScreenGui
-Openmain.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Openmain.Position = UDim2.new(0.905094922, 0, 0.893528223, 0)
-Openmain.Size = UDim2.new(0, 75, 0, 37)
 
 
-Open.Name = "Open"
-Open.Parent = Openmain
-Open.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Open.Size = UDim2.new(0, 75, 0, 37)
-Open.Font = Enum.Font.SciFi
-Open.Text = "Open"
-Open.TextColor3 = Color3.fromRGB(255, 255, 255)
-Open.TextScaled = true
-Open.TextSize = 14.000
-Open.TextWrapped = true
-Open.MouseButton1Down:connect(function()
-	Openmain.Visible = true
-	Main.Visible = true
+
+AutoClicker.Name = "AutoClicker"
+AutoClicker.Parent = Main
+AutoClicker.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+AutoClicker.Position = UDim2.new(0, 0, 2.46153855, 0)
+AutoClicker.Size = UDim2.new(0, 111, 0, 32)
+AutoClicker.Font = Enum.Font.SourceSans
+AutoClicker.Text = "Autoclicker"
+AutoClicker.TextColor3 = Color3.fromRGB(194, 194, 194)
+AutoClicker.TextScaled = true
+AutoClicker.TextSize = 14.000
+AutoClicker.TextWrapped = true
+
+KillAura.Name = "KillAura"
+KillAura.Parent = Main
+KillAura.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+KillAura.Position = UDim2.new(0, 0, 3.69230795, 0)
+KillAura.Size = UDim2.new(0, 111, 0, 32)
+KillAura.Font = Enum.Font.SourceSans
+KillAura.Text = "Kill Aura"
+KillAura.TextColor3 = Color3.fromRGB(194, 194, 194)
+KillAura.TextScaled = true
+KillAura.TextSize = 14.000
+KillAura.TextWrapped = true
+
+AntiKnockback.Name = "AntiKnockback"
+AntiKnockback.Parent = Main
+AntiKnockback.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+AntiKnockback.Position = UDim2.new(0, 0, 4.92307711, 0)
+AntiKnockback.Size = UDim2.new(0, 111, 0, 32)
+AntiKnockback.Font = Enum.Font.SourceSans
+AntiKnockback.Text = "Anti-Knockback"
+AntiKnockback.TextColor3 = Color3.fromRGB(194, 194, 194)
+AntiKnockback.TextScaled = true
+AntiKnockback.TextSize = 14.000
+AntiKnockback.TextWrapped = true
+
+Open2.Name = "Open2"
+Open2.Parent = Main
+Open2.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Open2.Position = UDim2.new(2.03571415, 0, 0, 0)
+Open2.Size = UDim2.new(0, 24, 0, 26)
+Open2.Font = Enum.Font.SourceSans
+Open2.Text = "+"
+Open2.TextColor3 = Color3.fromRGB(0, 0, 0)
+Open2.TextScaled = true
+Open2.TextSize = 14.000
+Open2.TextWrapped = true
+Open2.MouseButton1Down:connect(function()
+	Close2.Visible = true
+	Open2.Visible = false
+	if Fly.Visible == false then
+		Fly.Visible = true
+		Speed.Visible = true
+		end
+	end)
+
+Fly.Name = "Fly"
+Fly.Parent = Main
+Fly.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Fly.Position = UDim2.new(1.25, 0, 1.2307694, 0)
+Fly.Size = UDim2.new(0, 111, 0, 32)
+Fly.Font = Enum.Font.SourceSans
+Fly.Text = "Fly"
+Fly.TextColor3 = Color3.fromRGB(194, 194, 194)
+Fly.TextScaled = true
+Fly.TextSize = 14.000
+Fly.TextWrapped = true
+
+Speed.Name = "Speed"
+Speed.Parent = Main
+Speed.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Speed.Position = UDim2.new(1.25, 0, 2.42307734, 0)
+Speed.Size = UDim2.new(0, 111, 0, 32)
+Speed.Font = Enum.Font.SourceSans
+Speed.Text = "CFrame Speed"
+Speed.TextColor3 = Color3.fromRGB(194, 194, 194)
+Speed.TextScaled = true
+Speed.TextSize = 14.000
+Speed.TextWrapped = true
+
+NoClickDelay.Name = "NoClickDelay"
+NoClickDelay.Parent = Main
+NoClickDelay.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+NoClickDelay.Position = UDim2.new(-4.65661287e-09, 0, 6.11538506, 0)
+NoClickDelay.Size = UDim2.new(0, 111, 0, 32)
+NoClickDelay.Font = Enum.Font.SourceSans
+NoClickDelay.Text = "NoClickDelay"
+NoClickDelay.TextColor3 = Color3.fromRGB(194, 194, 194)
+NoClickDelay.TextScaled = true
+NoClickDelay.TextSize = 14.000
+NoClickDelay.TextWrapped = true
+
+AimAssist.Name = "AimAssist"
+AimAssist.Parent = Main
+AimAssist.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+AimAssist.Position = UDim2.new(0, 0, 1.23076928, 0)
+AimAssist.Size = UDim2.new(0, 111, 0, 32)
+AimAssist.Font = Enum.Font.SourceSans
+AimAssist.Text = "Aim Assist"
+AimAssist.TextColor3 = Color3.fromRGB(194, 194, 194)
+AimAssist.TextScaled = true
+AimAssist.TextSize = 14.000
+AimAssist.TextWrapped = true
+
+Visuals.Name = "Visuals"
+Visuals.Parent = Main
+Visuals.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Visuals.Position = UDim2.new(2.50892854, 0, 0, 0)
+Visuals.Size = UDim2.new(0, 88, 0, 26)
+Visuals.Font = Enum.Font.SciFi
+Visuals.Text = "Visuals"
+Visuals.TextColor3 = Color3.fromRGB(255, 255, 255)
+Visuals.TextScaled = true
+Visuals.TextSize = 14.000
+Visuals.TextWrapped = true
+
+Open3.Name = "Open3"
+Open3.Parent = Main
+Open3.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Open3.Position = UDim2.new(3.29464269, 0, 0, 0)
+Open3.Size = UDim2.new(0, 24, 0, 26)
+Open3.Font = Enum.Font.SourceSans
+Open3.Text = "+"
+Open3.TextColor3 = Color3.fromRGB(0, 0, 0)
+Open3.TextScaled = true
+Open3.TextSize = 14.000
+Open3.TextWrapped = true
+Open3.MouseButton1Down:connect(function()
+	Close3.Visible = true
+	Open3.Visible = false
+	if Esp.Visible == false then
+		Esp.Visible = true
+		Tracers.Visible = true
+		WinterTheme.Visible = true
+		end
+	end)
+
+Risk.Name = "Risk"
+Risk.Parent = Main
+Risk.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Risk.Position = UDim2.new(1.25, 0, 0, 0)
+Risk.Size = UDim2.new(0, 88, 0, 26)
+Risk.Font = Enum.Font.SciFi
+Risk.Text = "High-Risk"
+Risk.TextColor3 = Color3.fromRGB(255, 255, 255)
+Risk.TextScaled = true
+Risk.TextSize = 14.000
+Risk.TextWrapped = true
+
+Esp.Name = "Esp"
+Esp.Parent = Main
+Esp.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Esp.Position = UDim2.new(2.50892854, 0, 1.19230795, 0)
+Esp.Size = UDim2.new(0, 111, 0, 32)
+Esp.Font = Enum.Font.SourceSans
+Esp.Text = "Esp"
+Esp.TextColor3 = Color3.fromRGB(194, 194, 194)
+Esp.TextScaled = true
+Esp.TextSize = 14.000
+Esp.TextWrapped = true
+
+Tracers.Name = "Tracers"
+Tracers.Parent = Main
+Tracers.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Tracers.Position = UDim2.new(2.50892854, 0, 2.42307711, 0)
+Tracers.Size = UDim2.new(0, 111, 0, 32)
+Tracers.Font = Enum.Font.SourceSans
+Tracers.Text = "Tracers"
+Tracers.TextColor3 = Color3.fromRGB(194, 194, 194)
+Tracers.TextScaled = true
+Tracers.TextSize = 14.000
+Tracers.TextWrapped = true
+
+WinterTheme.Name = "WinterTheme"
+WinterTheme.Parent = Main
+WinterTheme.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+WinterTheme.Position = UDim2.new(2.50892854, 0, 3.65384626, 0)
+WinterTheme.Size = UDim2.new(0, 111, 0, 32)
+WinterTheme.Font = Enum.Font.SourceSans
+WinterTheme.Text = "WinterTheme"
+WinterTheme.TextColor3 = Color3.fromRGB(194, 194, 194)
+WinterTheme.TextScaled = true
+WinterTheme.TextSize = 14.000
+WinterTheme.TextWrapped = true
+
+LocalPlayer.Name = "Local Player"
+LocalPlayer.Parent = Main
+LocalPlayer.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+LocalPlayer.Position = UDim2.new(3.75, 0, 0, 0)
+LocalPlayer.Size = UDim2.new(0, 88, 0, 26)
+LocalPlayer.Font = Enum.Font.SciFi
+LocalPlayer.Text = "Local Player"
+LocalPlayer.TextColor3 = Color3.fromRGB(255, 255, 255)
+LocalPlayer.TextScaled = true
+LocalPlayer.TextSize = 14.000
+LocalPlayer.TextWrapped = true
+
+Open4.Name = "Open4"
+Open4.Parent = Main
+Open4.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Open4.Position = UDim2.new(4.53571415, 0, 0, 0)
+Open4.Size = UDim2.new(0, 24, 0, 26)
+Open4.Font = Enum.Font.SourceSans
+Open4.Text = "+"
+Open4.TextColor3 = Color3.fromRGB(0, 0, 0)
+Open4.TextScaled = true
+Open4.TextSize = 14.000
+Open4.TextWrapped = true
+Open4.MouseButton1Down:connect(function()
+	Close4.Visible = true
+	Open4.Visible = false
+	if FreeCam.Visible == false then
+		FreeCam.Visible = true
+		AntiVoid.Visible = true 
+		end
+	end)
+
+
+FreeCam.Name = "FreeCam"
+FreeCam.Parent = Main
+FreeCam.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+FreeCam.Position = UDim2.new(3.7410717, 0, 1.19230795, 0)
+FreeCam.Size = UDim2.new(0, 111, 0, 32)
+FreeCam.Font = Enum.Font.SourceSans
+FreeCam.Text = "Free-Cam"
+FreeCam.TextColor3 = Color3.fromRGB(194, 194, 194)
+FreeCam.TextScaled = true
+FreeCam.TextSize = 14.000
+FreeCam.TextWrapped = true
+
+AntiVoid.Name = "AntiVoid"
+AntiVoid.Parent = Main
+AntiVoid.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+AntiVoid.Position = UDim2.new(3.7410717, 0, 2.42307711, 0)
+AntiVoid.Size = UDim2.new(0, 111, 0, 32)
+AntiVoid.Font = Enum.Font.SourceSans
+AntiVoid.Text = "Anti-Void"
+AntiVoid.TextColor3 = Color3.fromRGB(194, 194, 194)
+AntiVoid.TextScaled = true
+AntiVoid.TextSize = 14.000
+AntiVoid.TextWrapped = true
+
+Close1.Name = "Close1"
+Close1.Parent = Main
+Close1.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Close1.Position = UDim2.new(0.785714209, 0, 0, 0)
+Close1.Size = UDim2.new(0, 24, 0, 26)
+Close1.Font = Enum.Font.SourceSans
+Close1.Text = "-"
+Close1.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close1.TextScaled = true
+Close1.TextSize = 14.000
+Close1.TextWrapped = true
+Close1.MouseButton1Down:connect(function()
+	Close1.Visible = false
+	Open1.Visible = true
+	if AimAssist.Visible == true then
+		AimAssist.Visible = false
+		AutoClicker.Visible = false
+		KillAura.Visible = false
+		AntiKnockback.Visible = false
+		NoClickDelay.Visible = false
+	end
 end)
+
+Close3.Name = "Close3"
+Close3.Parent = Main
+Close3.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Close3.Position = UDim2.new(3.29464245, 0, 0, 0)
+Close3.Size = UDim2.new(0, 24, 0, 26)
+Close3.Font = Enum.Font.SourceSans
+Close3.Text = "-"
+Close3.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close3.TextScaled = true
+Close3.TextSize = 14.000
+Close3.TextWrapped = true
+Close3.MouseButton1Down:connect(function()
+	Close3.Visible = false
+	Open3.Visible = true
+	if Esp.Visible == true then
+		Esp.Visible = false
+		WinterTheme.Visible = false
+		Tracers.Visible = false
+		end
+	end)
+
+Close4.Name = "Close4"
+Close4.Parent = Main
+Close4.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Close4.Position = UDim2.new(4.53571415, 0, 0, 0)
+Close4.Size = UDim2.new(0, 24, 0, 26)
+Close4.Font = Enum.Font.SourceSans
+Close4.Text = "-"
+Close4.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close4.TextScaled = true
+Close4.TextSize = 14.000
+Close4.TextWrapped = true
+Close4.MouseButton1Down:connect(function()
+	Close4.Visible = false
+	Open4.Visible = true
+	if FreeCam.Visible == true then
+		FreeCam.Visible = false
+			AntiVoid.Visible = false
+			end
+	end)
+
+Credits.Name = "Credits"
+Credits.Parent = Main
+Credits.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Credits.Position = UDim2.new(4.92857122, 0, 0, 0)
+Credits.Size = UDim2.new(0, 88, 0, 26)
+Credits.Font = Enum.Font.SciFi
+Credits.Text = "Credits"
+Credits.TextColor3 = Color3.fromRGB(255, 255, 255)
+Credits.TextScaled = true
+Credits.TextSize = 14.000
+Credits.TextWrapped = true
+
+Open5.Name = "Open5"
+Open5.Parent = Main
+Open5.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Open5.Position = UDim2.new(5.71428585, 0, 0, 0)
+Open5.Size = UDim2.new(0, 24, 0, 26)
+Open5.Font = Enum.Font.SourceSans
+Open5.Text = "+"
+Open5.TextColor3 = Color3.fromRGB(0, 0, 0)
+Open5.TextScaled = true
+Open5.TextSize = 14.000
+Open5.TextWrapped = true
+Open5.MouseButton1Down:connect(function()
+	Close5.Visible = true
+	Open5.Visible = false
+	if iwanaplay1.Visible == false then
+		iwanaplay1.Visible = true
+		name.Visible = true
+		Scripter.Visible = true
+		end
+	end)
+
+Close5.Name = "Close5"
+Close5.Parent = Main
+Close5.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Close5.Position = UDim2.new(5.71428585, 0, 0, 0)
+Close5.Size = UDim2.new(0, 24, 0, 26)
+Close5.Font = Enum.Font.SourceSans
+Close5.Text = "-"
+Close5.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close5.TextScaled = true
+Close5.TextSize = 14.000
+Close5.TextWrapped = true
+Close5.MouseButton1Down:connect(function()
+	Close5.Visible = false
+	Open5.Visible = true
+	if iwanaplay1.Visible == true then
+		iwanaplay1.Visible = false
+		Scripter.Visible = false
+		name.Visible = false
+	end
+	end)
+
+name.Name = "<name>"
+name.Parent = Main
+name.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+name.Position = UDim2.new(4.92857122, 0, 1.19230771, 0)
+name.Size = UDim2.new(0, 111, 0, 128)
+name.Font = Enum.Font.SourceSans
+name.Text = ""
+name.TextColor3 = Color3.fromRGB(194, 194, 194)
+name.TextScaled = true
+name.TextSize = 14.000
+name.TextWrapped = true
+
+iwanaplay1.Name = "iwanaplay1"
+iwanaplay1.Parent = Main
+iwanaplay1.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+iwanaplay1.Position = UDim2.new(4.92857122, 0, 2.46153855, 0)
+iwanaplay1.Size = UDim2.new(0, 111, 0, 32)
+iwanaplay1.Font = Enum.Font.SourceSans
+iwanaplay1.Text = "iwanaplay1"
+iwanaplay1.TextColor3 = Color3.fromRGB(194, 194, 194)
+iwanaplay1.TextScaled = true
+iwanaplay1.TextSize = 14.000
+iwanaplay1.TextWrapped = true
+
+Scripter.Name = "Scripter"
+Scripter.Parent = Main
+Scripter.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Scripter.Position = UDim2.new(5.02678537, 0, 1.30769229, 0)
+Scripter.Size = UDim2.new(0, 88, 0, 26)
+Scripter.Font = Enum.Font.SciFi
+Scripter.Text = "Scripter & Gui maker:"
+Scripter.TextColor3 = Color3.fromRGB(255, 255, 255)
+Scripter.TextScaled = true
+Scripter.TextSize = 14.000
+Scripter.TextWrapped = true
+
+Close2.Name = "Close2"
+Close2.Parent = Main
+Close2.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Close2.Position = UDim2.new(2.03571415, 0, 0, 0)
+Close2.Size = UDim2.new(0, 24, 0, 26)
+Close2.Font = Enum.Font.SourceSans
+Close2.Text = "-"
+Close2.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close2.TextScaled = true
+Close2.TextSize = 14.000
+Close2.TextWrapped = true
+Close2.MouseButton1Down:connect(function()
+		Close2.Visible = false
+		Open2.Visible = true
+		if Fly.Visible == true then
+			Fly.Visible = false
+			Speed.Visible = false
+
+			end
+		end)
