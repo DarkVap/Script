@@ -22,7 +22,7 @@ game.StarterGui:SetCore("SendNotification", {
 wait(1)
 game.StarterGui:SetCore("SendNotification", {
 	Title = "This is still in development";
-	Text = "Last Updated: 2 days ago"; 
+	Text = "Last Updated: 3 days ago"; 
 	Duration = 60;
 })
 
