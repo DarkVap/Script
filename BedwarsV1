@@ -16,7 +16,7 @@ wait(1)
 
 game.StarterGui:SetCore("SendNotification", {
 	Title = "Bedwars DarkVap";
-	Text = "Made by Fucking stupid Jeremiah"; 
+	Text = "Made by iwanaplay1"; 
 	Duration = 60;
 })
 wait(1)
