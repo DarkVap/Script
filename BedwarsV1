@@ -10,25 +10,24 @@ end)
 game.StarterGui:SetCore("SendNotification", {
 	Title = "Full Version";
 	Text = "Now Loading"; 
-	Duration = 60;
+	Duration = 30;
 })
 wait(1)
 
 game.StarterGui:SetCore("SendNotification", {
 	Title = "Bedwars DarkVap";
-	Text = "Made by iwanaplay1"; 
-	Duration = 60;
+	Text = "Made by the DarkVap Team"; 
+	Duration = 30;
 })
 wait(1)
 game.StarterGui:SetCore("SendNotification", {
 	Title = "This is still in development";
-	Text = "Last Updated: 5 days ago"; 
-	Duration = 60;
+	Text = "Last Updated: 1 day ago"; 
+	Duration = 30;
 })
 
 
-
-
+local Animate = game.Players.LocalPlayer.Character.Animate
 local ScreenGui = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local Combat = Instance.new("TextLabel")
@@ -55,14 +54,58 @@ local Close1 = Instance.new("TextButton")
 local Close3 = Instance.new("TextButton")
 local Close4 = Instance.new("TextButton")
 local Credits = Instance.new("TextLabel")
+local Open6 = Instance.new("TextButton")
+local Close6 = Instance.new("TextButton")
+local WerewolfPress = Instance.new("TextButton")
+local FlyJump = Instance.new("TextButton")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local Close2 = Instance.new("TextButton")
+local Animations = Instance.new("TextLabel")
 local Open5 = Instance.new("TextButton")
 local Close5 = Instance.new("TextButton")
-local name = Instance.new("TextButton")
-local iwanaplay1 = Instance.new("TextButton")
+local Ghost = Instance.new("TextButton")
+local Ninja = Instance.new("TextButton")
+local Elder = Instance.new("TextButton")
+local Levitation = Instance.new("TextButton")
+local NoAnim = Instance.new("TextButton")
+local Bubbly = Instance.new("TextButton")
+local Cartoony = Instance.new("TextButton")
+local Knight = Instance.new("TextButton")
+local Robot = Instance.new("TextButton")
+local Stylish = Instance.new("TextButton")
+local Werewolf = Instance.new("TextButton")
+local GhostPress = Instance.new("TextButton")
+local NinjaPress = Instance.new("TextButton")
+local ElderPress = Instance.new("TextButton")
+local LevitationPress = Instance.new("TextButton")
+local NoAnimPress = Instance.new("TextButton")
+local BubblyPress = Instance.new("TextButton")
+local CartoonyPress = Instance.new("TextButton")
+local KnightPress = Instance.new("TextButton")
+local RobotsPress = Instance.new("TextButton")
+local StylishPress = Instance.new("TextButton")
 local Scripter = Instance.new("TextLabel")
-local Close2 = Instance.new("TextButton")
+local FreeCamPress = Instance.new("TextButton")
+local AntiVoidPress = Instance.new("TextButton")
+local FlyJumpPress = Instance.new("TextButton")
+local EspPress = Instance.new("TextButton")
+local TracersPress = Instance.new("TextButton")
+local WinterThemePress = Instance.new("TextButton")
+local FlyPress = Instance.new("TextButton")
+local SpeedPress = Instance.new("TextButton")
+local AimAssistPress = Instance.new("TextButton")
+local AutoClickerPress = Instance.new("TextButton")
+local KillAuraPress = Instance.new("TextButton")
+local AntiKnockbackPress = Instance.new("TextButton")
+local NoClickDelayPress = Instance.new("TextButton")
+local TextLabel_2 = Instance.new("TextLabel")
+local OpenGui = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local CloseGui = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
 
---Properties:
+
 
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -72,6 +115,7 @@ Main.Parent = ScreenGui
 Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Main.Position = UDim2.new(0.02197803, 0, 0.0459290184, 0)
 Main.Size = UDim2.new(0, 112, 0, 26)
+
 
 Combat.Name = "Combat"
 Combat.Parent = Main
@@ -95,20 +139,15 @@ Open1.TextColor3 = Color3.fromRGB(0, 0, 0)
 Open1.TextScaled = true
 Open1.TextSize = 14.000
 Open1.TextWrapped = true
-Open1.MouseButton1Click:Connect(function()
+Open1.MouseButton1Down:Connect(function()
 	Open1.Visible = false
 	Close1.Visible = true
-	if AimAssist.Visible == false then
 	AimAssist.Visible = true
-	AutoClicker.Visible = true
 	KillAura.Visible = true
+	AutoClicker.Visible = true
+	NoClickDelay.Visible = true
 	AntiKnockback.Visible = true
-		NoClickDelay.Visible = true	
-		end
 end)
-
-
-
 
 AutoClicker.Name = "AutoClicker"
 AutoClicker.Parent = Main
@@ -157,14 +196,12 @@ Open2.TextColor3 = Color3.fromRGB(0, 0, 0)
 Open2.TextScaled = true
 Open2.TextSize = 14.000
 Open2.TextWrapped = true
-Open2.MouseButton1Down:connect(function()
-	Close2.Visible = true
+Open2.MouseButton1Down:Connect(function()
 	Open2.Visible = false
-	if Fly.Visible == false then
-		Fly.Visible = true
-		Speed.Visible = true
-		end
-	end)
+	Close2.Visible = true
+	Fly.Visible = true
+	Speed.Visible = true
+end)
 
 Fly.Name = "Fly"
 Fly.Parent = Main
@@ -184,7 +221,7 @@ Speed.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
 Speed.Position = UDim2.new(1.25, 0, 2.42307734, 0)
 Speed.Size = UDim2.new(0, 111, 0, 32)
 Speed.Font = Enum.Font.SourceSans
-Speed.Text = "CFrame Speed"
+Speed.Text = "Speed"
 Speed.TextColor3 = Color3.fromRGB(194, 194, 194)
 Speed.TextScaled = true
 Speed.TextSize = 14.000
@@ -237,15 +274,13 @@ Open3.TextColor3 = Color3.fromRGB(0, 0, 0)
 Open3.TextScaled = true
 Open3.TextSize = 14.000
 Open3.TextWrapped = true
-Open3.MouseButton1Down:connect(function()
-	Close3.Visible = true
+Open3.MouseButton1Down:Connect(function()
 	Open3.Visible = false
-	if Esp.Visible == false then
-		Esp.Visible = true
-		Tracers.Visible = true
-		WinterTheme.Visible = true
-		end
-	end)
+	Close3.Visible = true
+	Esp.Visible = true
+	Tracers.Visible = true
+	WinterTheme.Visible = true
+end)
 
 Risk.Name = "Risk"
 Risk.Parent = Main
@@ -318,15 +353,13 @@ Open4.TextColor3 = Color3.fromRGB(0, 0, 0)
 Open4.TextScaled = true
 Open4.TextSize = 14.000
 Open4.TextWrapped = true
-Open4.MouseButton1Down:connect(function()
-	Close4.Visible = true
+Open4.MouseButton1Down:Connect(function()
 	Open4.Visible = false
-	if FreeCam.Visible == false then
-		FreeCam.Visible = true
-		AntiVoid.Visible = true 
-		end
-	end)
-
+	Close4.Visible = true
+	FreeCam.Visible = true
+	AntiVoid.Visible = true
+	FlyJump.Visible = true
+end)
 
 FreeCam.Name = "FreeCam"
 FreeCam.Parent = Main
@@ -363,16 +396,14 @@ Close1.TextColor3 = Color3.fromRGB(0, 0, 0)
 Close1.TextScaled = true
 Close1.TextSize = 14.000
 Close1.TextWrapped = true
-Close1.MouseButton1Down:connect(function()
+Close1.MouseButton1Down:Connect(function()
 	Close1.Visible = false
 	Open1.Visible = true
-	if AimAssist.Visible == true then
-		AimAssist.Visible = false
-		AutoClicker.Visible = false
-		KillAura.Visible = false
-		AntiKnockback.Visible = false
-		NoClickDelay.Visible = false
-	end
+	AimAssist.Visible = false
+	AutoClicker.Visible = false
+	KillAura.Visible = false
+	AntiKnockback.Visible = false
+	NoClickDelay.Visible = false
 end)
 
 Close3.Name = "Close3"
@@ -386,15 +417,13 @@ Close3.TextColor3 = Color3.fromRGB(0, 0, 0)
 Close3.TextScaled = true
 Close3.TextSize = 14.000
 Close3.TextWrapped = true
-Close3.MouseButton1Down:connect(function()
+Close3.MouseButton1Down:Connect(function()
 	Close3.Visible = false
 	Open3.Visible = true
-	if Esp.Visible == true then
-		Esp.Visible = false
-		WinterTheme.Visible = false
-		Tracers.Visible = false
-		end
-	end)
+	Esp.Visible = false
+	Tracers.Visible = false
+	WinterTheme.Visible = false
+end)
 
 Close4.Name = "Close4"
 Close4.Parent = Main
@@ -407,19 +436,18 @@ Close4.TextColor3 = Color3.fromRGB(0, 0, 0)
 Close4.TextScaled = true
 Close4.TextSize = 14.000
 Close4.TextWrapped = true
-Close4.MouseButton1Down:connect(function()
+Close4.MouseButton1Down:Connect(function()
 	Close4.Visible = false
 	Open4.Visible = true
-	if FreeCam.Visible == true then
-		FreeCam.Visible = false
-			AntiVoid.Visible = false
-			end
-	end)
+	FreeCam.Visible = false
+	AntiVoid.Visible = false
+	FlyJump.Visible = false
+end)
 
 Credits.Name = "Credits"
 Credits.Parent = Main
 Credits.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Credits.Position = UDim2.new(4.92857122, 0, 0, 0)
+Credits.Position = UDim2.new(6.27678537, 0, 0, 0)
 Credits.Size = UDim2.new(0, 88, 0, 26)
 Credits.Font = Enum.Font.SciFi
 Credits.Text = "Credits"
@@ -428,83 +456,114 @@ Credits.TextScaled = true
 Credits.TextSize = 14.000
 Credits.TextWrapped = true
 
-Open5.Name = "Open5"
-Open5.Parent = Main
-Open5.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
-Open5.Position = UDim2.new(5.71428585, 0, 0, 0)
-Open5.Size = UDim2.new(0, 24, 0, 26)
-Open5.Font = Enum.Font.SourceSans
-Open5.Text = "+"
-Open5.TextColor3 = Color3.fromRGB(0, 0, 0)
-Open5.TextScaled = true
-Open5.TextSize = 14.000
-Open5.TextWrapped = true
-Open5.MouseButton1Down:connect(function()
-	Close5.Visible = true
-	Open5.Visible = false
-	if iwanaplay1.Visible == false then
-		iwanaplay1.Visible = true
-		name.Visible = true
-		Scripter.Visible = true
+Open6.Name = "Open6"
+Open6.Parent = Main
+Open6.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Open6.Position = UDim2.new(7.0625, 0, 0, 0)
+Open6.Size = UDim2.new(0, 24, 0, 26)
+Open6.Font = Enum.Font.SourceSans
+Open6.Text = "+"
+Open6.TextColor3 = Color3.fromRGB(0, 0, 0)
+Open6.TextScaled = true
+Open6.TextSize = 14.000
+Open6.TextWrapped = true
+Open6.MouseButton1Down:Connect(function()
+	Open6.Visible = false
+	Close6.Visible = true
+	Frame.Visible = true
+	Scripter.Visible = true
+end)
+
+Close6.Name = "Close6"
+Close6.Parent = Main
+Close6.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Close6.Position = UDim2.new(7.06250048, 0, 3.7252903e-09, 0)
+Close6.Size = UDim2.new(0, 24, 0, 26)
+Close6.Font = Enum.Font.SourceSans
+Close6.Text = "-"
+Close6.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close6.TextScaled = true
+Close6.TextSize = 14.000
+Close6.TextWrapped = true
+Close6.MouseButton1Down:Connect(function()
+	Close6.Visible = false
+	Open6.Visible = true
+	Frame.Visible = false
+	Scripter.Visible = false
+	TextLabel_2.Visible = false
+end)
+
+WerewolfPress.Name = "WerewolfPress"
+WerewolfPress.Parent = Main
+WerewolfPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+WerewolfPress.Position = UDim2.new(5.00892878, 0, 13.5769234, 0)
+WerewolfPress.Size = UDim2.new(0, 111, 0, 32)
+WerewolfPress.Visible = false
+WerewolfPress.Font = Enum.Font.SourceSans
+WerewolfPress.Text = "Werewolf"
+WerewolfPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+WerewolfPress.TextScaled = true
+WerewolfPress.TextSize = 14.000
+WerewolfPress.TextWrapped = true
+Werewolf.MouseButton1Click:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "WereWolf Animation is on";
+		Text = "Disable this in Animations"; 
+		Duration = 7.5;
+	})
+	WerewolfPress.Visible = true
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=1083195517"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=1083214717"
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=1083178339"
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=1083216690"
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=1083218792"
+	Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=1083182000"
+	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=1083189019"
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+	end)
+
+FlyJump.Name = "FlyJump"
+FlyJump.Parent = Main
+FlyJump.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+FlyJump.Position = UDim2.new(3.7410717, 0, 3.69230795, 0)
+FlyJump.Size = UDim2.new(0, 111, 0, 32)
+FlyJump.Font = Enum.Font.SourceSans
+FlyJump.Text = "FlyJump"
+FlyJump.TextColor3 = Color3.fromRGB(194, 194, 194)
+FlyJump.TextScaled = true
+FlyJump.TextSize = 14.000
+FlyJump.TextWrapped = true
+FlyJump.MouseButton1Down:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "FlyJump is on";
+		Text = "Disable this in Local Player"; 
+		Duration = 7.5;
+	})
+	FlyJumpPress.Visible = true
+	local InfiniteJumpEnabled = true
+	game:GetService("UserInputService").JumpRequest:connect(function()
+		if InfiniteJumpEnabled then
+			game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
 		end
 	end)
+end)
 
-Close5.Name = "Close5"
-Close5.Parent = Main
-Close5.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
-Close5.Position = UDim2.new(5.71428585, 0, 0, 0)
-Close5.Size = UDim2.new(0, 24, 0, 26)
-Close5.Font = Enum.Font.SourceSans
-Close5.Text = "-"
-Close5.TextColor3 = Color3.fromRGB(0, 0, 0)
-Close5.TextScaled = true
-Close5.TextSize = 14.000
-Close5.TextWrapped = true
-Close5.MouseButton1Down:connect(function()
-	Close5.Visible = false
-	Open5.Visible = true
-	if iwanaplay1.Visible == true then
-		iwanaplay1.Visible = false
-		Scripter.Visible = false
-		name.Visible = false
-	end
-	end)
+Frame.Parent = Main
+Frame.BackgroundColor3 = Color3.fromRGB(45, 79, 116)
+Frame.Position = UDim2.new(6.26785707, 0, 1.23076928, 0)
+Frame.Size = UDim2.new(0, 113, 0, 121)
 
-name.Name = "<name>"
-name.Parent = Main
-name.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
-name.Position = UDim2.new(4.92857122, 0, 1.19230771, 0)
-name.Size = UDim2.new(0, 111, 0, 128)
-name.Font = Enum.Font.SourceSans
-name.Text = ""
-name.TextColor3 = Color3.fromRGB(194, 194, 194)
-name.TextScaled = true
-name.TextSize = 14.000
-name.TextWrapped = true
-
-iwanaplay1.Name = "iwanaplay1"
-iwanaplay1.Parent = Main
-iwanaplay1.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
-iwanaplay1.Position = UDim2.new(4.92857122, 0, 2.46153855, 0)
-iwanaplay1.Size = UDim2.new(0, 111, 0, 32)
-iwanaplay1.Font = Enum.Font.SourceSans
-iwanaplay1.Text = "iwanaplay1"
-iwanaplay1.TextColor3 = Color3.fromRGB(194, 194, 194)
-iwanaplay1.TextScaled = true
-iwanaplay1.TextSize = 14.000
-iwanaplay1.TextWrapped = true
-
-Scripter.Name = "Scripter"
-Scripter.Parent = Main
-Scripter.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Scripter.Position = UDim2.new(5.02678537, 0, 1.30769229, 0)
-Scripter.Size = UDim2.new(0, 88, 0, 26)
-Scripter.Font = Enum.Font.SciFi
-Scripter.Text = "Scripter & Gui maker:"
-Scripter.TextColor3 = Color3.fromRGB(255, 255, 255)
-Scripter.TextScaled = true
-Scripter.TextSize = 14.000
-Scripter.TextWrapped = true
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(-0.00884955749, 0, 0.247933894, 0)
+TextLabel.Size = UDim2.new(0, 113, 0, 37)
+TextLabel.Font = Enum.Font.SourceSansBold
+TextLabel.Text = ""
+TextLabel.TextColor3 = Color3.fromRGB(248, 248, 248)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
 
 Close2.Name = "Close2"
 Close2.Parent = Main
@@ -517,12 +576,2264 @@ Close2.TextColor3 = Color3.fromRGB(0, 0, 0)
 Close2.TextScaled = true
 Close2.TextSize = 14.000
 Close2.TextWrapped = true
-Close2.MouseButton1Down:connect(function()
-		Close2.Visible = false
-		Open2.Visible = true
-		if Fly.Visible == true then
-			Fly.Visible = false
-			Speed.Visible = false
+Close2.MouseButton1Down:Connect(function()
+	Close2.Visible = false
+	Open2.Visible = true
+	Fly.Visible = false
+	Speed.Visible = false
+end)
 
-			end
-		end)
+Animations.Name = "Animations"
+Animations.Parent = Main
+Animations.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Animations.Position = UDim2.new(5.00892878, 0, -2.23517418e-07, 0)
+Animations.Size = UDim2.new(0, 88, 0, 26)
+Animations.Font = Enum.Font.SciFi
+Animations.Text = "Animations"
+Animations.TextColor3 = Color3.fromRGB(255, 255, 255)
+Animations.TextScaled = true
+Animations.TextSize = 14.000
+Animations.TextWrapped = true
+
+Open5.Name = "Open5"
+Open5.Parent = Main
+Open5.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Open5.Position = UDim2.new(5.79464293, 0, 0, 0)
+Open5.Size = UDim2.new(0, 24, 0, 26)
+Open5.Font = Enum.Font.SourceSans
+Open5.Text = "+"
+Open5.TextColor3 = Color3.fromRGB(0, 0, 0)
+Open5.TextScaled = true
+Open5.TextSize = 14.000
+Open5.TextWrapped = true
+Open5.MouseButton1Down:Connect(function()
+	Open5.Visible = false
+	Close5.Visible = true
+	Ghost.Visible = true
+	Ninja.Visible = true
+	Elder.Visible = true
+	Levitation.Visible = true
+	NoAnim.Visible = true
+	Bubbly.Visible = true
+	Cartoony.Visible = true
+	Knight.Visible = true
+	Robot.Visible = true
+	Stylish.Visible = true
+	Werewolf.Visiblem = true
+end)
+
+Close5.Name = "Close5"
+Close5.Parent = Main
+Close5.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Close5.Position = UDim2.new(5.79464293, 0, 0, 0)
+Close5.Size = UDim2.new(0, 24, 0, 26)
+Close5.Font = Enum.Font.SourceSans
+Close5.Text = "-"
+Close5.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close5.TextScaled = true
+Close5.TextSize = 14.000
+Close5.TextWrapped = true
+Close5.MouseButton1Down:Connect(function()
+	Close5.Visible = false
+	Open5.Visible = true
+	Ghost.Visible = false
+	Ninja.Visible = false
+	Elder.Visible = false
+	Levitation.Visible = false
+	NoAnim.Visible = false
+	Bubbly.Visible = false
+	Cartoony.Visible = false
+	Knight.Visible = false
+	Robot.Visible = false
+	Stylish.Visible = false
+	Werewolf.Visible = false
+end)
+
+Ghost.Name = "Ghost"
+Ghost.Parent = Main
+Ghost.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Ghost.Position = UDim2.new(5, 0, 1.19230795, 0)
+Ghost.Size = UDim2.new(0, 111, 0, 32)
+Ghost.Font = Enum.Font.SourceSans
+Ghost.Text = "Ghost"
+Ghost.TextColor3 = Color3.fromRGB(194, 194, 194)
+Ghost.TextScaled = true
+Ghost.TextSize = 14.000
+Ghost.TextWrapped = true
+Ghost.MouseButton1Click:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Ghost Animation is on";
+		Text = "Disable this in Animations"; 
+		Duration = 7.5;
+	})
+	GhostPress.Visible = true
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=616006778"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=616008087"
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616013216"
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616013216"
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=616008936"
+	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=616005863"
+	Animate.swimidle.SwimIdle.AnimationId = "http://www.roblox.com/asset/?id=616012453"
+	Animate.swim.Swim.AnimationId = "http://www.roblox.com/asset/?id=616011509"
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end)
+
+
+Ninja.Name = "Ninja"
+Ninja.Parent = Main
+Ninja.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Ninja.Position = UDim2.new(5, 0, 2.38461566, 0)
+Ninja.Size = UDim2.new(0, 111, 0, 32)
+Ninja.Font = Enum.Font.SourceSans
+Ninja.Text = "Ninja"
+Ninja.TextColor3 = Color3.fromRGB(194, 194, 194)
+Ninja.TextScaled = true
+Ninja.TextSize = 14.000
+Ninja.TextWrapped = true
+Ninja.MouseButton1Click:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Ninja Animation is on";
+		Text = "Disable this in Animations"; 
+		Duration = 7.5;
+	})
+	NinjaPress.Visible = true
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=656117400"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=656118341"
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=656121766"
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=656118852"
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=656117878"
+	Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=656114359"
+	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=656115606"
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end)
+
+Elder.Name = "Elder"
+Elder.Parent = Main
+Elder.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Elder.Position = UDim2.new(5, 0, 3.69230795, 0)
+Elder.Size = UDim2.new(0, 111, 0, 32)
+Elder.Font = Enum.Font.SourceSans
+Elder.Text = "Elder"
+Elder.TextColor3 = Color3.fromRGB(194, 194, 194)
+Elder.TextScaled = true
+Elder.TextSize = 14.000
+Elder.TextWrapped = true
+Elder.MouseButton1Click:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Elder Animation is on";
+		Text = "Disable this in Animations"; 
+		Duration = 7.5;
+	})
+	ElderPress.Visible = true
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=845397899"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=845400520"
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=845403856"
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=845386501"
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=845398858"
+	Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=845392038"
+	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=845396048"
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end)
+
+Levitation.Name = "Levitation"
+Levitation.Parent = Main
+Levitation.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Levitation.Position = UDim2.new(5, 0, 4.92307711, 0)
+Levitation.Size = UDim2.new(0, 111, 0, 32)
+Levitation.Font = Enum.Font.SourceSans
+Levitation.Text = "Levitation"
+Levitation.TextColor3 = Color3.fromRGB(194, 194, 194)
+Levitation.TextScaled = true
+Levitation.TextSize = 14.000
+Levitation.TextWrapped = true
+Levitation.MouseButton1Click:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Levitation Animation is on";
+		Text = "Disable this in Animations"; 
+		Duration = 7.5;
+	})
+	LevitationPress.Visible = true
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=616006778"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=616008087"
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616013216"
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616010382"
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=616008936"
+	Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=616003713"
+	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=616005863"
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end)
+
+NoAnim.Name = "NoAnim"
+NoAnim.Parent = Main
+NoAnim.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+NoAnim.Position = UDim2.new(5, 0, 6.11538458, 0)
+NoAnim.Size = UDim2.new(0, 111, 0, 32)
+NoAnim.Font = Enum.Font.SourceSans
+NoAnim.Text = "No Animation"
+NoAnim.TextColor3 = Color3.fromRGB(194, 194, 194)
+NoAnim.TextScaled = true
+NoAnim.TextSize = 14.000
+NoAnim.TextWrapped = true
+NoAnim.MouseButton1Click:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "No Animation is on";
+		Text = "Disable this in Animations"; 
+		Duration = 7.5;
+	})
+	NoAnimPress.Visible = true
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=0"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=0"
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=0"
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=0"
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=0"
+	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=0"
+	Animate.swimidle.SwimIdle.AnimationId = "http://www.roblox.com/asset/?id=0"
+	Animate.swim.Swim.AnimationId = "http://www.roblox.com/asset/?id=0"
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end)
+
+Bubbly.Name = "Bubbly"
+Bubbly.Parent = Main
+Bubbly.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Bubbly.Position = UDim2.new(5, 0, 7.34615374, 0)
+Bubbly.Size = UDim2.new(0, 111, 0, 32)
+Bubbly.Font = Enum.Font.SourceSans
+Bubbly.Text = "Bubbly"
+Bubbly.TextColor3 = Color3.fromRGB(194, 194, 194)
+Bubbly.TextScaled = true
+Bubbly.TextSize = 14.000
+Bubbly.TextWrapped = true
+Bubbly.MouseButton1Click:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Bubbly is on";
+		Text = "Disable this in Animations"; 
+		Duration = 7.5;
+	})
+	BubblyPress.Visible = true
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=910004836"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=910009958"
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=910034870"
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=910025107"
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=910016857"
+	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=910001910"
+	Animate.swimidle.SwimIdle.AnimationId = "http://www.roblox.com/asset/?id=910030921"
+	Animate.swim.Swim.AnimationId = "http://www.roblox.com/asset/?id=910028158"
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end)
+
+Cartoony.Name = "Cartoony"
+Cartoony.Parent = Main
+Cartoony.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Cartoony.Position = UDim2.new(5, 0, 8.57692337, 0)
+Cartoony.Size = UDim2.new(0, 111, 0, 32)
+Cartoony.Font = Enum.Font.SourceSans
+Cartoony.Text = "Cartoony"
+Cartoony.TextColor3 = Color3.fromRGB(194, 194, 194)
+Cartoony.TextScaled = true
+Cartoony.TextSize = 14.000
+Cartoony.TextWrapped = true
+Cartoony.MouseButton1Click:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Cartoony Animation is on";
+		Text = "Disable this in Animations"; 
+		Duration = 7.5;
+	})
+	CartoonyPress.Visible = true
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=742637544"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=742638445"
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=742640026"
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=742638842"
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=742637942"
+	Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=742636889"
+	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=742637151"
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end)
+
+Knight.Name = "Knight"
+Knight.Parent = Main
+Knight.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Knight.Position = UDim2.new(5, 0, 9.80769253, 0)
+Knight.Size = UDim2.new(0, 111, 0, 32)
+Knight.Font = Enum.Font.SourceSans
+Knight.Text = "Knights Walk"
+Knight.TextColor3 = Color3.fromRGB(194, 194, 194)
+Knight.TextScaled = true
+Knight.TextSize = 14.000
+Knight.TextWrapped = true
+Knight.MouseButton1Click:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Knight Animation is on";
+		Text = "Disable this in Animations"; 
+		Duration = 7.5;
+	})
+	KnightPress.Visible = true
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=657595757"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=657568135"
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=657552124"
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=657564596"
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=658409194"
+	Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=658360781"
+	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=657600338"
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end)
+
+Robot.Name = "Robot"
+Robot.Parent = Main
+Robot.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Robot.Position = UDim2.new(5, 0, 11.0384617, 0)
+Robot.Size = UDim2.new(0, 111, 0, 32)
+Robot.Font = Enum.Font.SourceSans
+Robot.Text = "Robot"
+Robot.TextColor3 = Color3.fromRGB(194, 194, 194)
+Robot.TextScaled = true
+Robot.TextSize = 14.000
+Robot.TextWrapped = true
+Robot.MouseButton1Click:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Robot Animation is on";
+		Text = "Disable this in Animations"; 
+		Duration = 7.5;
+	})
+	RobotsPress.Visible = true
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=616088211"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=616089559"
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616095330"
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616091570"
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=616090535"
+	Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=616086039"
+	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=616087089"
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end)
+
+Stylish.Name = "Stylish"
+Stylish.Parent = Main
+Stylish.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Stylish.Position = UDim2.new(5, 0, 12.2692308, 0)
+Stylish.Size = UDim2.new(0, 111, 0, 32)
+Stylish.Font = Enum.Font.SourceSans
+Stylish.Text = "Stylish"
+Stylish.TextColor3 = Color3.fromRGB(194, 194, 194)
+Stylish.TextScaled = true
+Stylish.TextSize = 14.000
+Stylish.TextWrapped = true
+Stylish.MouseButton1Click:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Stylish Animation is on";
+		Text = "Disable this in Animations"; 
+		Duration = 7.5;
+	})
+	StylishPress.Visible = true
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=616136790"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=616138447"
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616146177"
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616140816"
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=616139451"
+	Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=616133594"
+	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=616134815"
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end)
+
+Werewolf.Name = "Werewolf"
+Werewolf.Parent = Main
+Werewolf.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Werewolf.Position = UDim2.new(5, 0, 13.5769234, 0)
+Werewolf.Size = UDim2.new(0, 111, 0, 32)
+Werewolf.Font = Enum.Font.SourceSans
+Werewolf.Text = "Werewolf"
+Werewolf.TextColor3 = Color3.fromRGB(194, 194, 194)
+Werewolf.TextScaled = true
+Werewolf.TextSize = 14.000
+Werewolf.TextWrapped = true
+Werewolf.MouseButton1Click:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "WereWolf Animation is on";
+		Text = "Disable this in Animations"; 
+		Duration = 7.5;
+	})
+	WerewolfPress.Visible = true
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=1083195517"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=1083214717"
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=1083178339"
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=1083216690"
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=1083218792"
+	Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=1083182000"
+	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=1083189019"
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end)
+
+GhostPress.Name = "GhostPress"
+GhostPress.Parent = Main
+GhostPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+GhostPress.Position = UDim2.new(5, 0, 1.19230795, 0)
+GhostPress.Size = UDim2.new(0, 111, 0, 32)
+GhostPress.Visible = false
+GhostPress.Font = Enum.Font.SourceSans
+GhostPress.Text = "Ghost"
+GhostPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+GhostPress.TextScaled = true
+GhostPress.TextSize = 14.000
+GhostPress.TextWrapped = true
+GhostPress.MouseButton1Click:Connect(function()
+	GhostPress.Visible = false
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Ghost Animation is off";
+		Text = "Enable this in Animations"; 
+		Duration = 7.5;
+	})
+end)
+
+NinjaPress.Name = "NinjaPress"
+NinjaPress.Parent = Main
+NinjaPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+NinjaPress.Position = UDim2.new(5, 0, 2.46153855, 0)
+NinjaPress.Size = UDim2.new(0, 111, 0, 32)
+NinjaPress.Visible = false
+NinjaPress.Font = Enum.Font.SourceSans
+NinjaPress.Text = "Ninja"
+NinjaPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+NinjaPress.TextScaled = true
+NinjaPress.TextSize = 14.000
+NinjaPress.TextWrapped = true
+NinjaPress.MouseButton1Click:Connect(function()
+	NinjaPress.Visible = false
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Ninja Animation is off";
+		Text = "Enable this in Animations"; 
+		Duration = 7.5;
+	})
+end)
+
+ElderPress.Name = "ElderPress"
+ElderPress.Parent = Main
+ElderPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+ElderPress.Position = UDim2.new(5, 0, 3.69230795, 0)
+ElderPress.Size = UDim2.new(0, 111, 0, 32)
+ElderPress.Visible = false
+ElderPress.Font = Enum.Font.SourceSans
+ElderPress.Text = "Elder"
+ElderPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+ElderPress.TextScaled = true
+ElderPress.TextSize = 14.000
+ElderPress.TextWrapped = true
+ElderPress.MouseButton1Click:Connect(function()
+	ElderPress.Visible = false
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Elder Animation is off";
+		Text = "Enable this in Animations"; 
+		Duration = 7.5;
+	})
+end)
+
+LevitationPress.Name = "LevitationPress"
+LevitationPress.Parent = Main
+LevitationPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+LevitationPress.Position = UDim2.new(5, 0, 4.8846159, 0)
+LevitationPress.Size = UDim2.new(0, 111, 0, 32)
+LevitationPress.Visible = false
+LevitationPress.Font = Enum.Font.SourceSans
+LevitationPress.Text = "Levitation"
+LevitationPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+LevitationPress.TextScaled = true
+LevitationPress.TextSize = 14.000
+LevitationPress.TextWrapped = true
+LevitationPress.MouseButton1Click:Connect(function()
+	LevitationPress.Visible = false
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Levitation Animation is off";
+		Text = "Enable this in Animations"; 
+		Duration = 7.5;
+	})
+end)
+
+NoAnimPress.Name = "NoAnimPress"
+NoAnimPress.Parent = Main
+NoAnimPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+NoAnimPress.Position = UDim2.new(5, 0, 6.11538506, 0)
+NoAnimPress.Size = UDim2.new(0, 111, 0, 32)
+NoAnimPress.Visible = false
+NoAnimPress.Font = Enum.Font.SourceSans
+NoAnimPress.Text = "No Animation"
+NoAnimPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+NoAnimPress.TextScaled = true
+NoAnimPress.TextSize = 14.000
+NoAnimPress.TextWrapped = true
+NoAnimPress.MouseButton1Click:Connect(function()
+	NoAnimPress.Visible = false
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "No Animation is off";
+		Text = "Enable this in Animations"; 
+		Duration = 7.5;
+	})
+end)
+
+BubblyPress.Name = "BubblyPress"
+BubblyPress.Parent = Main
+BubblyPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+BubblyPress.Position = UDim2.new(5, 0, 7.34615421, 0)
+BubblyPress.Size = UDim2.new(0, 111, 0, 32)
+BubblyPress.Visible = false
+BubblyPress.Font = Enum.Font.SourceSans
+BubblyPress.Text = "Bubbly"
+BubblyPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+BubblyPress.TextScaled = true
+BubblyPress.TextSize = 14.000
+BubblyPress.TextWrapped = true
+BubblyPress.MouseButton1Click:Connect(function()
+	BubblyPress.Visible = false
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Bubbly Animation is off";
+		Text = "Enable this in Animations"; 
+		Duration = 7.5;
+	})
+end)
+
+CartoonyPress.Name = "CartoonyPress"
+CartoonyPress.Parent = Main
+CartoonyPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+CartoonyPress.Position = UDim2.new(5, 0, 8.57692337, 0)
+CartoonyPress.Size = UDim2.new(0, 111, 0, 32)
+CartoonyPress.Visible = false
+CartoonyPress.Font = Enum.Font.SourceSans
+CartoonyPress.Text = "Cartoony"
+CartoonyPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+CartoonyPress.TextScaled = true
+CartoonyPress.TextSize = 14.000
+CartoonyPress.TextWrapped = true
+CartoonyPress.MouseButton1Click:Connect(function()
+	CartoonyPress.Visible = false
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Cartoony Animation is off";
+		Text = "Enable this in Animations"; 
+		Duration = 7.5;
+	})
+end)
+
+KnightPress.Name = "KnightPress"
+KnightPress.Parent = Main
+KnightPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+KnightPress.Position = UDim2.new(5, 0, 9.80769253, 0)
+KnightPress.Size = UDim2.new(0, 111, 0, 32)
+KnightPress.Visible = false
+KnightPress.Font = Enum.Font.SourceSans
+KnightPress.Text = "Knights Walk"
+KnightPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+KnightPress.TextScaled = true
+KnightPress.TextSize = 14.000
+KnightPress.TextWrapped = true
+KnightPress.MouseButton1Click:Connect(function()
+	KnightPress.Visible = false
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Knight Animation is off";
+		Text = "Enable this in Animations"; 
+		Duration = 7.5;
+	})
+end)
+
+RobotsPress.Name = "RobotsPress"
+RobotsPress.Parent = Main
+RobotsPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+RobotsPress.Position = UDim2.new(5, 0, 11.0384617, 0)
+RobotsPress.Size = UDim2.new(0, 111, 0, 32)
+RobotsPress.Visible = false
+RobotsPress.Font = Enum.Font.SourceSans
+RobotsPress.Text = "Robot"
+RobotsPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+RobotsPress.TextScaled = true
+RobotsPress.TextSize = 14.000
+RobotsPress.TextWrapped = true
+RobotsPress.MouseButton1Click:Connect(function()
+	RobotsPress.Visible = false
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Robot Animation is off";
+		Text = "Enable this in Animations"; 
+		Duration = 7.5;
+	})
+end)
+
+StylishPress.Name = "StylishPress"
+StylishPress.Parent = Main
+StylishPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+StylishPress.Position = UDim2.new(5.00892878, 0, 12.2692308, 0)
+StylishPress.Size = UDim2.new(0, 111, 0, 32)
+StylishPress.Visible = false
+StylishPress.Font = Enum.Font.SourceSans
+StylishPress.Text = "Stylish"
+StylishPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+StylishPress.TextScaled = true
+StylishPress.TextSize = 14.000
+StylishPress.TextWrapped = true
+StylishPress.MouseButton1Click:Connect(function()
+	StylishPress.Visible = false
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Stylish Animation is off";
+		Text = "Enable this in Animations"; 
+		Duration = 7.5;
+	})
+end)
+
+Scripter.Name = "Scripter:"
+Scripter.Parent = Main
+Scripter.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Scripter.Position = UDim2.new(6.375, 0, 1.4615382, 0)
+Scripter.Size = UDim2.new(0, 88, 0, 101)
+Scripter.Font = Enum.Font.SciFi
+Scripter.Text = "DarkVap Team"
+Scripter.TextColor3 = Color3.fromRGB(255, 255, 255)
+Scripter.TextScaled = true
+Scripter.TextSize = 14.000
+Scripter.TextWrapped = true
+
+FreeCamPress.Name = "FreeCamPress"
+FreeCamPress.Parent = Main
+FreeCamPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+FreeCamPress.Position = UDim2.new(3.74107146, 0, 1.19230795, 0)
+FreeCamPress.Size = UDim2.new(0, 111, 0, 32)
+FreeCamPress.Visible = false
+FreeCamPress.Font = Enum.Font.SourceSans
+FreeCamPress.Text = "FreeCam"
+FreeCamPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+FreeCamPress.TextScaled = true
+FreeCamPress.TextSize = 14.000
+FreeCamPress.TextWrapped = true
+
+AntiVoidPress.Name = "AntiVoidPress"
+AntiVoidPress.Parent = Main
+AntiVoidPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+AntiVoidPress.Position = UDim2.new(3.74107146, 0, 2.46153855, 0)
+AntiVoidPress.Size = UDim2.new(0, 111, 0, 32)
+AntiVoidPress.Visible = false
+AntiVoidPress.Font = Enum.Font.SourceSans
+AntiVoidPress.Text = "Anti-Void"
+AntiVoidPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+AntiVoidPress.TextScaled = true
+AntiVoidPress.TextSize = 14.000
+AntiVoidPress.TextWrapped = true
+
+FlyJumpPress.Name = "FlyJumpPress"
+FlyJumpPress.Parent = Main
+FlyJumpPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+FlyJumpPress.Position = UDim2.new(3.74107146, 0, 3.69230771, 0)
+FlyJumpPress.Size = UDim2.new(0, 111, 0, 32)
+FlyJumpPress.Visible = false
+FlyJumpPress.Font = Enum.Font.SourceSans
+FlyJumpPress.Text = "FlyJump"
+FlyJumpPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+FlyJumpPress.TextScaled = true
+FlyJumpPress.TextSize = 14.000
+FlyJumpPress.TextWrapped = true
+FlyJumpPress.MouseButton1Down:Connect(function()
+	FlyJumpPress.Visible = false
+	
+
+
+local vu = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+	vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+	wait(1)
+	vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+game.StarterGui:SetCore("SendNotification", {
+	Title = "Full Version";
+	Text = "Now Loading"; 
+	Duration = 30;
+})
+wait(1)
+
+game.StarterGui:SetCore("SendNotification", {
+	Title = "Bedwars DarkVap";
+	Text = "Made by the DarkVap Team"; 
+	Duration = 30;
+})
+wait(1)
+game.StarterGui:SetCore("SendNotification", {
+	Title = "This is still in development";
+	Text = "Last Updated: 1 day ago"; 
+	Duration = 30;
+})
+
+
+local Animate = game.Players.LocalPlayer.Character.Animate
+local ScreenGui = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Combat = Instance.new("TextLabel")
+local Open1 = Instance.new("TextButton")
+local AutoClicker = Instance.new("TextButton")
+local KillAura = Instance.new("TextButton")
+local AntiKnockback = Instance.new("TextButton")
+local Open2 = Instance.new("TextButton")
+local Fly = Instance.new("TextButton")
+local Speed = Instance.new("TextButton")
+local NoClickDelay = Instance.new("TextButton")
+local AimAssist = Instance.new("TextButton")
+local Visuals = Instance.new("TextLabel")
+local Open3 = Instance.new("TextButton")
+local Risk = Instance.new("TextLabel")
+local Esp = Instance.new("TextButton")
+local Tracers = Instance.new("TextButton")
+local WinterTheme = Instance.new("TextButton")
+local LocalPlayer = Instance.new("TextLabel")
+local Open4 = Instance.new("TextButton")
+local FreeCam = Instance.new("TextButton")
+local AntiVoid = Instance.new("TextButton")
+local Close1 = Instance.new("TextButton")
+local Close3 = Instance.new("TextButton")
+local Close4 = Instance.new("TextButton")
+local Credits = Instance.new("TextLabel")
+local Open6 = Instance.new("TextButton")
+local Close6 = Instance.new("TextButton")
+local WerewolfPress = Instance.new("TextButton")
+local FlyJump = Instance.new("TextButton")
+local Frame = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local Close2 = Instance.new("TextButton")
+local Animations = Instance.new("TextLabel")
+local Open5 = Instance.new("TextButton")
+local Close5 = Instance.new("TextButton")
+local Ghost = Instance.new("TextButton")
+local Ninja = Instance.new("TextButton")
+local Elder = Instance.new("TextButton")
+local Levitation = Instance.new("TextButton")
+local NoAnim = Instance.new("TextButton")
+local Bubbly = Instance.new("TextButton")
+local Cartoony = Instance.new("TextButton")
+local Knight = Instance.new("TextButton")
+local Robot = Instance.new("TextButton")
+local Stylish = Instance.new("TextButton")
+local Werewolf = Instance.new("TextButton")
+local GhostPress = Instance.new("TextButton")
+local NinjaPress = Instance.new("TextButton")
+local ElderPress = Instance.new("TextButton")
+local LevitationPress = Instance.new("TextButton")
+local NoAnimPress = Instance.new("TextButton")
+local BubblyPress = Instance.new("TextButton")
+local CartoonyPress = Instance.new("TextButton")
+local KnightPress = Instance.new("TextButton")
+local RobotsPress = Instance.new("TextButton")
+local StylishPress = Instance.new("TextButton")
+local Scripter = Instance.new("TextLabel")
+local FreeCamPress = Instance.new("TextButton")
+local AntiVoidPress = Instance.new("TextButton")
+local FlyJumpPress = Instance.new("TextButton")
+local EspPress = Instance.new("TextButton")
+local TracersPress = Instance.new("TextButton")
+local WinterThemePress = Instance.new("TextButton")
+local FlyPress = Instance.new("TextButton")
+local SpeedPress = Instance.new("TextButton")
+local AimAssistPress = Instance.new("TextButton")
+local AutoClickerPress = Instance.new("TextButton")
+local KillAuraPress = Instance.new("TextButton")
+local AntiKnockbackPress = Instance.new("TextButton")
+local NoClickDelayPress = Instance.new("TextButton")
+local TextLabel_2 = Instance.new("TextLabel")
+local OpenGui = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local CloseGui = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+
+
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Main.Name = "Main"
+Main.Parent = ScreenGui
+Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Main.Position = UDim2.new(0.02197803, 0, 0.0459290184, 0)
+Main.Size = UDim2.new(0, 112, 0, 26)
+
+
+Combat.Name = "Combat"
+Combat.Parent = Main
+Combat.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Combat.Size = UDim2.new(0, 88, 0, 26)
+Combat.Font = Enum.Font.SciFi
+Combat.Text = "Combat"
+Combat.TextColor3 = Color3.fromRGB(255, 255, 255)
+Combat.TextScaled = true
+Combat.TextSize = 14.000
+Combat.TextWrapped = true
+
+Open1.Name = "Open1"
+Open1.Parent = Main
+Open1.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Open1.Position = UDim2.new(0.785714209, 0, 0, 0)
+Open1.Size = UDim2.new(0, 24, 0, 26)
+Open1.Font = Enum.Font.SourceSans
+Open1.Text = "+"
+Open1.TextColor3 = Color3.fromRGB(0, 0, 0)
+Open1.TextScaled = true
+Open1.TextSize = 14.000
+Open1.TextWrapped = true
+Open1.MouseButton1Down:Connect(function()
+	Open1.Visible = false
+	Close1.Visible = true
+	AimAssist.Visible = true
+	KillAura.Visible = true
+	AutoClicker.Visible = true
+	NoClickDelay.Visible = true
+	AntiKnockback.Visible = true
+end)
+
+AutoClicker.Name = "AutoClicker"
+AutoClicker.Parent = Main
+AutoClicker.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+AutoClicker.Position = UDim2.new(0, 0, 2.46153855, 0)
+AutoClicker.Size = UDim2.new(0, 111, 0, 32)
+AutoClicker.Font = Enum.Font.SourceSans
+AutoClicker.Text = "Autoclicker"
+AutoClicker.TextColor3 = Color3.fromRGB(194, 194, 194)
+AutoClicker.TextScaled = true
+AutoClicker.TextSize = 14.000
+AutoClicker.TextWrapped = true
+
+KillAura.Name = "KillAura"
+KillAura.Parent = Main
+KillAura.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+KillAura.Position = UDim2.new(0, 0, 3.69230795, 0)
+KillAura.Size = UDim2.new(0, 111, 0, 32)
+KillAura.Font = Enum.Font.SourceSans
+KillAura.Text = "Kill Aura"
+KillAura.TextColor3 = Color3.fromRGB(194, 194, 194)
+KillAura.TextScaled = true
+KillAura.TextSize = 14.000
+KillAura.TextWrapped = true
+
+AntiKnockback.Name = "AntiKnockback"
+AntiKnockback.Parent = Main
+AntiKnockback.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+AntiKnockback.Position = UDim2.new(0, 0, 4.92307711, 0)
+AntiKnockback.Size = UDim2.new(0, 111, 0, 32)
+AntiKnockback.Font = Enum.Font.SourceSans
+AntiKnockback.Text = "Anti-Knockback"
+AntiKnockback.TextColor3 = Color3.fromRGB(194, 194, 194)
+AntiKnockback.TextScaled = true
+AntiKnockback.TextSize = 14.000
+AntiKnockback.TextWrapped = true
+
+Open2.Name = "Open2"
+Open2.Parent = Main
+Open2.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Open2.Position = UDim2.new(2.03571415, 0, 0, 0)
+Open2.Size = UDim2.new(0, 24, 0, 26)
+Open2.Font = Enum.Font.SourceSans
+Open2.Text = "+"
+Open2.TextColor3 = Color3.fromRGB(0, 0, 0)
+Open2.TextScaled = true
+Open2.TextSize = 14.000
+Open2.TextWrapped = true
+Open2.MouseButton1Down:Connect(function()
+	Open2.Visible = false
+	Close2.Visible = true
+	Fly.Visible = true
+	Speed.Visible = true
+end)
+
+Fly.Name = "Fly"
+Fly.Parent = Main
+Fly.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Fly.Position = UDim2.new(1.25, 0, 1.2307694, 0)
+Fly.Size = UDim2.new(0, 111, 0, 32)
+Fly.Font = Enum.Font.SourceSans
+Fly.Text = "Fly"
+Fly.TextColor3 = Color3.fromRGB(194, 194, 194)
+Fly.TextScaled = true
+Fly.TextSize = 14.000
+Fly.TextWrapped = true
+
+Speed.Name = "Speed"
+Speed.Parent = Main
+Speed.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Speed.Position = UDim2.new(1.25, 0, 2.42307734, 0)
+Speed.Size = UDim2.new(0, 111, 0, 32)
+Speed.Font = Enum.Font.SourceSans
+Speed.Text = "Speed"
+Speed.TextColor3 = Color3.fromRGB(194, 194, 194)
+Speed.TextScaled = true
+Speed.TextSize = 14.000
+Speed.TextWrapped = true
+
+NoClickDelay.Name = "NoClickDelay"
+NoClickDelay.Parent = Main
+NoClickDelay.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+NoClickDelay.Position = UDim2.new(-4.65661287e-09, 0, 6.11538506, 0)
+NoClickDelay.Size = UDim2.new(0, 111, 0, 32)
+NoClickDelay.Font = Enum.Font.SourceSans
+NoClickDelay.Text = "NoClickDelay"
+NoClickDelay.TextColor3 = Color3.fromRGB(194, 194, 194)
+NoClickDelay.TextScaled = true
+NoClickDelay.TextSize = 14.000
+NoClickDelay.TextWrapped = true
+
+AimAssist.Name = "AimAssist"
+AimAssist.Parent = Main
+AimAssist.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+AimAssist.Position = UDim2.new(0, 0, 1.23076928, 0)
+AimAssist.Size = UDim2.new(0, 111, 0, 32)
+AimAssist.Font = Enum.Font.SourceSans
+AimAssist.Text = "Aim Assist"
+AimAssist.TextColor3 = Color3.fromRGB(194, 194, 194)
+AimAssist.TextScaled = true
+AimAssist.TextSize = 14.000
+AimAssist.TextWrapped = true
+
+Visuals.Name = "Visuals"
+Visuals.Parent = Main
+Visuals.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Visuals.Position = UDim2.new(2.50892854, 0, 0, 0)
+Visuals.Size = UDim2.new(0, 88, 0, 26)
+Visuals.Font = Enum.Font.SciFi
+Visuals.Text = "Visuals"
+Visuals.TextColor3 = Color3.fromRGB(255, 255, 255)
+Visuals.TextScaled = true
+Visuals.TextSize = 14.000
+Visuals.TextWrapped = true
+
+Open3.Name = "Open3"
+Open3.Parent = Main
+Open3.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Open3.Position = UDim2.new(3.29464269, 0, 0, 0)
+Open3.Size = UDim2.new(0, 24, 0, 26)
+Open3.Font = Enum.Font.SourceSans
+Open3.Text = "+"
+Open3.TextColor3 = Color3.fromRGB(0, 0, 0)
+Open3.TextScaled = true
+Open3.TextSize = 14.000
+Open3.TextWrapped = true
+Open3.MouseButton1Down:Connect(function()
+	Open3.Visible = false
+	Close3.Visible = true
+	Esp.Visible = true
+	Tracers.Visible = true
+	WinterTheme.Visible = true
+end)
+
+Risk.Name = "Risk"
+Risk.Parent = Main
+Risk.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Risk.Position = UDim2.new(1.25, 0, 0, 0)
+Risk.Size = UDim2.new(0, 88, 0, 26)
+Risk.Font = Enum.Font.SciFi
+Risk.Text = "High-Risk"
+Risk.TextColor3 = Color3.fromRGB(255, 255, 255)
+Risk.TextScaled = true
+Risk.TextSize = 14.000
+Risk.TextWrapped = true
+
+Esp.Name = "Esp"
+Esp.Parent = Main
+Esp.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Esp.Position = UDim2.new(2.50892854, 0, 1.19230795, 0)
+Esp.Size = UDim2.new(0, 111, 0, 32)
+Esp.Font = Enum.Font.SourceSans
+Esp.Text = "Esp"
+Esp.TextColor3 = Color3.fromRGB(194, 194, 194)
+Esp.TextScaled = true
+Esp.TextSize = 14.000
+Esp.TextWrapped = true
+
+Tracers.Name = "Tracers"
+Tracers.Parent = Main
+Tracers.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Tracers.Position = UDim2.new(2.50892854, 0, 2.42307711, 0)
+Tracers.Size = UDim2.new(0, 111, 0, 32)
+Tracers.Font = Enum.Font.SourceSans
+Tracers.Text = "Tracers"
+Tracers.TextColor3 = Color3.fromRGB(194, 194, 194)
+Tracers.TextScaled = true
+Tracers.TextSize = 14.000
+Tracers.TextWrapped = true
+
+WinterTheme.Name = "WinterTheme"
+WinterTheme.Parent = Main
+WinterTheme.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+WinterTheme.Position = UDim2.new(2.50892854, 0, 3.65384626, 0)
+WinterTheme.Size = UDim2.new(0, 111, 0, 32)
+WinterTheme.Font = Enum.Font.SourceSans
+WinterTheme.Text = "WinterTheme"
+WinterTheme.TextColor3 = Color3.fromRGB(194, 194, 194)
+WinterTheme.TextScaled = true
+WinterTheme.TextSize = 14.000
+WinterTheme.TextWrapped = true
+
+LocalPlayer.Name = "Local Player"
+LocalPlayer.Parent = Main
+LocalPlayer.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+LocalPlayer.Position = UDim2.new(3.75, 0, 0, 0)
+LocalPlayer.Size = UDim2.new(0, 88, 0, 26)
+LocalPlayer.Font = Enum.Font.SciFi
+LocalPlayer.Text = "Local Player"
+LocalPlayer.TextColor3 = Color3.fromRGB(255, 255, 255)
+LocalPlayer.TextScaled = true
+LocalPlayer.TextSize = 14.000
+LocalPlayer.TextWrapped = true
+
+Open4.Name = "Open4"
+Open4.Parent = Main
+Open4.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Open4.Position = UDim2.new(4.53571415, 0, 0, 0)
+Open4.Size = UDim2.new(0, 24, 0, 26)
+Open4.Font = Enum.Font.SourceSans
+Open4.Text = "+"
+Open4.TextColor3 = Color3.fromRGB(0, 0, 0)
+Open4.TextScaled = true
+Open4.TextSize = 14.000
+Open4.TextWrapped = true
+Open4.MouseButton1Down:Connect(function()
+	Open4.Visible = false
+	Close4.Visible = true
+	FreeCam.Visible = true
+	AntiVoid.Visible = true
+	FlyJump.Visible = true
+end)
+
+FreeCam.Name = "FreeCam"
+FreeCam.Parent = Main
+FreeCam.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+FreeCam.Position = UDim2.new(3.7410717, 0, 1.19230795, 0)
+FreeCam.Size = UDim2.new(0, 111, 0, 32)
+FreeCam.Font = Enum.Font.SourceSans
+FreeCam.Text = "Free-Cam"
+FreeCam.TextColor3 = Color3.fromRGB(194, 194, 194)
+FreeCam.TextScaled = true
+FreeCam.TextSize = 14.000
+FreeCam.TextWrapped = true
+
+AntiVoid.Name = "AntiVoid"
+AntiVoid.Parent = Main
+AntiVoid.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+AntiVoid.Position = UDim2.new(3.7410717, 0, 2.42307711, 0)
+AntiVoid.Size = UDim2.new(0, 111, 0, 32)
+AntiVoid.Font = Enum.Font.SourceSans
+AntiVoid.Text = "Anti-Void"
+AntiVoid.TextColor3 = Color3.fromRGB(194, 194, 194)
+AntiVoid.TextScaled = true
+AntiVoid.TextSize = 14.000
+AntiVoid.TextWrapped = true
+
+Close1.Name = "Close1"
+Close1.Parent = Main
+Close1.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Close1.Position = UDim2.new(0.785714209, 0, 0, 0)
+Close1.Size = UDim2.new(0, 24, 0, 26)
+Close1.Font = Enum.Font.SourceSans
+Close1.Text = "-"
+Close1.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close1.TextScaled = true
+Close1.TextSize = 14.000
+Close1.TextWrapped = true
+Close1.MouseButton1Down:Connect(function()
+	Close1.Visible = false
+	Open1.Visible = true
+	AimAssist.Visible = false
+	AutoClicker.Visible = false
+	KillAura.Visible = false
+	AntiKnockback.Visible = false
+	NoClickDelay.Visible = false
+end)
+
+Close3.Name = "Close3"
+Close3.Parent = Main
+Close3.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Close3.Position = UDim2.new(3.29464245, 0, 0, 0)
+Close3.Size = UDim2.new(0, 24, 0, 26)
+Close3.Font = Enum.Font.SourceSans
+Close3.Text = "-"
+Close3.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close3.TextScaled = true
+Close3.TextSize = 14.000
+Close3.TextWrapped = true
+Close3.MouseButton1Down:Connect(function()
+	Close3.Visible = false
+	Open3.Visible = true
+	Esp.Visible = false
+	Tracers.Visible = false
+	WinterTheme.Visible = false
+end)
+
+Close4.Name = "Close4"
+Close4.Parent = Main
+Close4.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Close4.Position = UDim2.new(4.53571415, 0, 0, 0)
+Close4.Size = UDim2.new(0, 24, 0, 26)
+Close4.Font = Enum.Font.SourceSans
+Close4.Text = "-"
+Close4.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close4.TextScaled = true
+Close4.TextSize = 14.000
+Close4.TextWrapped = true
+Close4.MouseButton1Down:Connect(function()
+	Close4.Visible = false
+	Open4.Visible = true
+	FreeCam.Visible = false
+	AntiVoid.Visible = false
+	FlyJump.Visible = false
+end)
+
+Credits.Name = "Credits"
+Credits.Parent = Main
+Credits.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Credits.Position = UDim2.new(6.27678537, 0, 0, 0)
+Credits.Size = UDim2.new(0, 88, 0, 26)
+Credits.Font = Enum.Font.SciFi
+Credits.Text = "Credits"
+Credits.TextColor3 = Color3.fromRGB(255, 255, 255)
+Credits.TextScaled = true
+Credits.TextSize = 14.000
+Credits.TextWrapped = true
+
+Open6.Name = "Open6"
+Open6.Parent = Main
+Open6.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Open6.Position = UDim2.new(7.0625, 0, 0, 0)
+Open6.Size = UDim2.new(0, 24, 0, 26)
+Open6.Font = Enum.Font.SourceSans
+Open6.Text = "+"
+Open6.TextColor3 = Color3.fromRGB(0, 0, 0)
+Open6.TextScaled = true
+Open6.TextSize = 14.000
+Open6.TextWrapped = true
+Open6.MouseButton1Down:Connect(function()
+	Open6.Visible = false
+	Close6.Visible = true
+	Frame.Visible = true
+	Scripter.Visible = true
+end)
+
+Close6.Name = "Close6"
+Close6.Parent = Main
+Close6.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Close6.Position = UDim2.new(7.06250048, 0, 3.7252903e-09, 0)
+Close6.Size = UDim2.new(0, 24, 0, 26)
+Close6.Font = Enum.Font.SourceSans
+Close6.Text = "-"
+Close6.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close6.TextScaled = true
+Close6.TextSize = 14.000
+Close6.TextWrapped = true
+Close6.MouseButton1Down:Connect(function()
+	Close6.Visible = false
+	Open6.Visible = true
+	Frame.Visible = false
+	Scripter.Visible = false
+	TextLabel_2.Visible = false
+end)
+
+WerewolfPress.Name = "WerewolfPress"
+WerewolfPress.Parent = Main
+WerewolfPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+WerewolfPress.Position = UDim2.new(5.00892878, 0, 13.5769234, 0)
+WerewolfPress.Size = UDim2.new(0, 111, 0, 32)
+WerewolfPress.Visible = false
+WerewolfPress.Font = Enum.Font.SourceSans
+WerewolfPress.Text = "Werewolf"
+WerewolfPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+WerewolfPress.TextScaled = true
+WerewolfPress.TextSize = 14.000
+WerewolfPress.TextWrapped = true
+Werewolf.MouseButton1Click:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "WereWolf Animation is on";
+		Text = "Disable this in Animations"; 
+		Duration = 7.5;
+	})
+	WerewolfPress.Visible = true
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=1083195517"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=1083214717"
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=1083178339"
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=1083216690"
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=1083218792"
+	Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=1083182000"
+	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=1083189019"
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+	end)
+
+FlyJump.Name = "FlyJump"
+FlyJump.Parent = Main
+FlyJump.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+FlyJump.Position = UDim2.new(3.7410717, 0, 3.69230795, 0)
+FlyJump.Size = UDim2.new(0, 111, 0, 32)
+FlyJump.Font = Enum.Font.SourceSans
+FlyJump.Text = "FlyJump"
+FlyJump.TextColor3 = Color3.fromRGB(194, 194, 194)
+FlyJump.TextScaled = true
+FlyJump.TextSize = 14.000
+FlyJump.TextWrapped = true
+FlyJump.MouseButton1Down:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "FlyJump is on";
+		Text = "Disable this in Local Player"; 
+		Duration = 7.5;
+	})
+	FlyJumpPress.Visible = true
+	local InfiniteJumpEnabled = true
+	game:GetService("UserInputService").JumpRequest:connect(function()
+		if InfiniteJumpEnabled then
+			game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+		end
+	end)
+end)
+
+Frame.Parent = Main
+Frame.BackgroundColor3 = Color3.fromRGB(45, 79, 116)
+Frame.Position = UDim2.new(6.26785707, 0, 1.23076928, 0)
+Frame.Size = UDim2.new(0, 113, 0, 121)
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(-0.00884955749, 0, 0.247933894, 0)
+TextLabel.Size = UDim2.new(0, 113, 0, 37)
+TextLabel.Font = Enum.Font.SourceSansBold
+TextLabel.Text = ""
+TextLabel.TextColor3 = Color3.fromRGB(248, 248, 248)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+Close2.Name = "Close2"
+Close2.Parent = Main
+Close2.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Close2.Position = UDim2.new(2.03571415, 0, 0, 0)
+Close2.Size = UDim2.new(0, 24, 0, 26)
+Close2.Font = Enum.Font.SourceSans
+Close2.Text = "-"
+Close2.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close2.TextScaled = true
+Close2.TextSize = 14.000
+Close2.TextWrapped = true
+Close2.MouseButton1Down:Connect(function()
+	Close2.Visible = false
+	Open2.Visible = true
+	Fly.Visible = false
+	Speed.Visible = false
+end)
+
+Animations.Name = "Animations"
+Animations.Parent = Main
+Animations.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Animations.Position = UDim2.new(5.00892878, 0, -2.23517418e-07, 0)
+Animations.Size = UDim2.new(0, 88, 0, 26)
+Animations.Font = Enum.Font.SciFi
+Animations.Text = "Animations"
+Animations.TextColor3 = Color3.fromRGB(255, 255, 255)
+Animations.TextScaled = true
+Animations.TextSize = 14.000
+Animations.TextWrapped = true
+
+Open5.Name = "Open5"
+Open5.Parent = Main
+Open5.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Open5.Position = UDim2.new(5.79464293, 0, 0, 0)
+Open5.Size = UDim2.new(0, 24, 0, 26)
+Open5.Font = Enum.Font.SourceSans
+Open5.Text = "+"
+Open5.TextColor3 = Color3.fromRGB(0, 0, 0)
+Open5.TextScaled = true
+Open5.TextSize = 14.000
+Open5.TextWrapped = true
+Open5.MouseButton1Down:Connect(function()
+	Open5.Visible = false
+	Close5.Visible = true
+	Ghost.Visible = true
+	Ninja.Visible = true
+	Elder.Visible = true
+	Levitation.Visible = true
+	NoAnim.Visible = true
+	Bubbly.Visible = true
+	Cartoony.Visible = true
+	Knight.Visible = true
+	Robot.Visible = true
+	Stylish.Visible = true
+	Werewolf.Visiblem = true
+end)
+
+Close5.Name = "Close5"
+Close5.Parent = Main
+Close5.BackgroundColor3 = Color3.fromRGB(213, 0, 0)
+Close5.Position = UDim2.new(5.79464293, 0, 0, 0)
+Close5.Size = UDim2.new(0, 24, 0, 26)
+Close5.Font = Enum.Font.SourceSans
+Close5.Text = "-"
+Close5.TextColor3 = Color3.fromRGB(0, 0, 0)
+Close5.TextScaled = true
+Close5.TextSize = 14.000
+Close5.TextWrapped = true
+Close5.MouseButton1Down:Connect(function()
+	Close5.Visible = false
+	Open5.Visible = true
+	Ghost.Visible = false
+	Ninja.Visible = false
+	Elder.Visible = false
+	Levitation.Visible = false
+	NoAnim.Visible = false
+	Bubbly.Visible = false
+	Cartoony.Visible = false
+	Knight.Visible = false
+	Robot.Visible = false
+	Stylish.Visible = false
+	Werewolf.Visible = false
+end)
+
+Ghost.Name = "Ghost"
+Ghost.Parent = Main
+Ghost.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Ghost.Position = UDim2.new(5, 0, 1.19230795, 0)
+Ghost.Size = UDim2.new(0, 111, 0, 32)
+Ghost.Font = Enum.Font.SourceSans
+Ghost.Text = "Ghost"
+Ghost.TextColor3 = Color3.fromRGB(194, 194, 194)
+Ghost.TextScaled = true
+Ghost.TextSize = 14.000
+Ghost.TextWrapped = true
+Ghost.MouseButton1Click:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Ghost Animation is on";
+		Text = "Disable this in Animations"; 
+		Duration = 7.5;
+	})
+	GhostPress.Visible = true
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=616006778"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=616008087"
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616013216"
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616013216"
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=616008936"
+	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=616005863"
+	Animate.swimidle.SwimIdle.AnimationId = "http://www.roblox.com/asset/?id=616012453"
+	Animate.swim.Swim.AnimationId = "http://www.roblox.com/asset/?id=616011509"
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end)
+
+
+Ninja.Name = "Ninja"
+Ninja.Parent = Main
+Ninja.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Ninja.Position = UDim2.new(5, 0, 2.38461566, 0)
+Ninja.Size = UDim2.new(0, 111, 0, 32)
+Ninja.Font = Enum.Font.SourceSans
+Ninja.Text = "Ninja"
+Ninja.TextColor3 = Color3.fromRGB(194, 194, 194)
+Ninja.TextScaled = true
+Ninja.TextSize = 14.000
+Ninja.TextWrapped = true
+Ninja.MouseButton1Click:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Ninja Animation is on";
+		Text = "Disable this in Animations"; 
+		Duration = 7.5;
+	})
+	NinjaPress.Visible = true
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=656117400"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=656118341"
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=656121766"
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=656118852"
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=656117878"
+	Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=656114359"
+	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=656115606"
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end)
+
+Elder.Name = "Elder"
+Elder.Parent = Main
+Elder.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Elder.Position = UDim2.new(5, 0, 3.69230795, 0)
+Elder.Size = UDim2.new(0, 111, 0, 32)
+Elder.Font = Enum.Font.SourceSans
+Elder.Text = "Elder"
+Elder.TextColor3 = Color3.fromRGB(194, 194, 194)
+Elder.TextScaled = true
+Elder.TextSize = 14.000
+Elder.TextWrapped = true
+Elder.MouseButton1Click:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Elder Animation is on";
+		Text = "Disable this in Animations"; 
+		Duration = 7.5;
+	})
+	ElderPress.Visible = true
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=845397899"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=845400520"
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=845403856"
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=845386501"
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=845398858"
+	Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=845392038"
+	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=845396048"
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end)
+
+Levitation.Name = "Levitation"
+Levitation.Parent = Main
+Levitation.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Levitation.Position = UDim2.new(5, 0, 4.92307711, 0)
+Levitation.Size = UDim2.new(0, 111, 0, 32)
+Levitation.Font = Enum.Font.SourceSans
+Levitation.Text = "Levitation"
+Levitation.TextColor3 = Color3.fromRGB(194, 194, 194)
+Levitation.TextScaled = true
+Levitation.TextSize = 14.000
+Levitation.TextWrapped = true
+Levitation.MouseButton1Click:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Levitation Animation is on";
+		Text = "Disable this in Animations"; 
+		Duration = 7.5;
+	})
+	LevitationPress.Visible = true
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=616006778"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=616008087"
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616013216"
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616010382"
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=616008936"
+	Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=616003713"
+	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=616005863"
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end)
+
+NoAnim.Name = "NoAnim"
+NoAnim.Parent = Main
+NoAnim.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+NoAnim.Position = UDim2.new(5, 0, 6.11538458, 0)
+NoAnim.Size = UDim2.new(0, 111, 0, 32)
+NoAnim.Font = Enum.Font.SourceSans
+NoAnim.Text = "No Animation"
+NoAnim.TextColor3 = Color3.fromRGB(194, 194, 194)
+NoAnim.TextScaled = true
+NoAnim.TextSize = 14.000
+NoAnim.TextWrapped = true
+NoAnim.MouseButton1Click:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "No Animation is on";
+		Text = "Disable this in Animations"; 
+		Duration = 7.5;
+	})
+	NoAnimPress.Visible = true
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=0"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=0"
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=0"
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=0"
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=0"
+	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=0"
+	Animate.swimidle.SwimIdle.AnimationId = "http://www.roblox.com/asset/?id=0"
+	Animate.swim.Swim.AnimationId = "http://www.roblox.com/asset/?id=0"
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end)
+
+Bubbly.Name = "Bubbly"
+Bubbly.Parent = Main
+Bubbly.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Bubbly.Position = UDim2.new(5, 0, 7.34615374, 0)
+Bubbly.Size = UDim2.new(0, 111, 0, 32)
+Bubbly.Font = Enum.Font.SourceSans
+Bubbly.Text = "Bubbly"
+Bubbly.TextColor3 = Color3.fromRGB(194, 194, 194)
+Bubbly.TextScaled = true
+Bubbly.TextSize = 14.000
+Bubbly.TextWrapped = true
+Bubbly.MouseButton1Click:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Bubbly is on";
+		Text = "Disable this in Animations"; 
+		Duration = 7.5;
+	})
+	BubblyPress.Visible = true
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=910004836"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=910009958"
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=910034870"
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=910025107"
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=910016857"
+	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=910001910"
+	Animate.swimidle.SwimIdle.AnimationId = "http://www.roblox.com/asset/?id=910030921"
+	Animate.swim.Swim.AnimationId = "http://www.roblox.com/asset/?id=910028158"
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end)
+
+Cartoony.Name = "Cartoony"
+Cartoony.Parent = Main
+Cartoony.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Cartoony.Position = UDim2.new(5, 0, 8.57692337, 0)
+Cartoony.Size = UDim2.new(0, 111, 0, 32)
+Cartoony.Font = Enum.Font.SourceSans
+Cartoony.Text = "Cartoony"
+Cartoony.TextColor3 = Color3.fromRGB(194, 194, 194)
+Cartoony.TextScaled = true
+Cartoony.TextSize = 14.000
+Cartoony.TextWrapped = true
+Cartoony.MouseButton1Click:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Cartoony Animation is on";
+		Text = "Disable this in Animations"; 
+		Duration = 7.5;
+	})
+	CartoonyPress.Visible = true
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=742637544"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=742638445"
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=742640026"
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=742638842"
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=742637942"
+	Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=742636889"
+	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=742637151"
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end)
+
+Knight.Name = "Knight"
+Knight.Parent = Main
+Knight.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Knight.Position = UDim2.new(5, 0, 9.80769253, 0)
+Knight.Size = UDim2.new(0, 111, 0, 32)
+Knight.Font = Enum.Font.SourceSans
+Knight.Text = "Knights Walk"
+Knight.TextColor3 = Color3.fromRGB(194, 194, 194)
+Knight.TextScaled = true
+Knight.TextSize = 14.000
+Knight.TextWrapped = true
+Knight.MouseButton1Click:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Knight Animation is on";
+		Text = "Disable this in Animations"; 
+		Duration = 7.5;
+	})
+	KnightPress.Visible = true
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=657595757"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=657568135"
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=657552124"
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=657564596"
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=658409194"
+	Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=658360781"
+	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=657600338"
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end)
+
+Robot.Name = "Robot"
+Robot.Parent = Main
+Robot.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Robot.Position = UDim2.new(5, 0, 11.0384617, 0)
+Robot.Size = UDim2.new(0, 111, 0, 32)
+Robot.Font = Enum.Font.SourceSans
+Robot.Text = "Robot"
+Robot.TextColor3 = Color3.fromRGB(194, 194, 194)
+Robot.TextScaled = true
+Robot.TextSize = 14.000
+Robot.TextWrapped = true
+Robot.MouseButton1Click:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Robot Animation is on";
+		Text = "Disable this in Animations"; 
+		Duration = 7.5;
+	})
+	RobotsPress.Visible = true
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=616088211"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=616089559"
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616095330"
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616091570"
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=616090535"
+	Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=616086039"
+	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=616087089"
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end)
+
+Stylish.Name = "Stylish"
+Stylish.Parent = Main
+Stylish.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Stylish.Position = UDim2.new(5, 0, 12.2692308, 0)
+Stylish.Size = UDim2.new(0, 111, 0, 32)
+Stylish.Font = Enum.Font.SourceSans
+Stylish.Text = "Stylish"
+Stylish.TextColor3 = Color3.fromRGB(194, 194, 194)
+Stylish.TextScaled = true
+Stylish.TextSize = 14.000
+Stylish.TextWrapped = true
+Stylish.MouseButton1Click:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Stylish Animation is on";
+		Text = "Disable this in Animations"; 
+		Duration = 7.5;
+	})
+	StylishPress.Visible = true
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=616136790"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=616138447"
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616146177"
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616140816"
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=616139451"
+	Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=616133594"
+	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=616134815"
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end)
+
+Werewolf.Name = "Werewolf"
+Werewolf.Parent = Main
+Werewolf.BackgroundColor3 = Color3.fromRGB(86, 86, 86)
+Werewolf.Position = UDim2.new(5, 0, 13.5769234, 0)
+Werewolf.Size = UDim2.new(0, 111, 0, 32)
+Werewolf.Font = Enum.Font.SourceSans
+Werewolf.Text = "Werewolf"
+Werewolf.TextColor3 = Color3.fromRGB(194, 194, 194)
+Werewolf.TextScaled = true
+Werewolf.TextSize = 14.000
+Werewolf.TextWrapped = true
+Werewolf.MouseButton1Click:Connect(function()
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "WereWolf Animation is on";
+		Text = "Disable this in Animations"; 
+		Duration = 7.5;
+	})
+	WerewolfPress.Visible = true
+	Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=1083195517"
+	Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=1083214717"
+	Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=1083178339"
+	Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=1083216690"
+	Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=1083218792"
+	Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=1083182000"
+	Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=1083189019"
+	game.Players.LocalPlayer.Character.Humanoid.Jump = true
+end)
+
+GhostPress.Name = "GhostPress"
+GhostPress.Parent = Main
+GhostPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+GhostPress.Position = UDim2.new(5, 0, 1.19230795, 0)
+GhostPress.Size = UDim2.new(0, 111, 0, 32)
+GhostPress.Visible = false
+GhostPress.Font = Enum.Font.SourceSans
+GhostPress.Text = "Ghost"
+GhostPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+GhostPress.TextScaled = true
+GhostPress.TextSize = 14.000
+GhostPress.TextWrapped = true
+GhostPress.MouseButton1Click:Connect(function()
+	GhostPress.Visible = false
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Ghost Animation is off";
+		Text = "Enable this in Animations"; 
+		Duration = 7.5;
+	})
+end)
+
+NinjaPress.Name = "NinjaPress"
+NinjaPress.Parent = Main
+NinjaPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+NinjaPress.Position = UDim2.new(5, 0, 2.46153855, 0)
+NinjaPress.Size = UDim2.new(0, 111, 0, 32)
+NinjaPress.Visible = false
+NinjaPress.Font = Enum.Font.SourceSans
+NinjaPress.Text = "Ninja"
+NinjaPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+NinjaPress.TextScaled = true
+NinjaPress.TextSize = 14.000
+NinjaPress.TextWrapped = true
+NinjaPress.MouseButton1Click:Connect(function()
+	NinjaPress.Visible = false
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Ninja Animation is off";
+		Text = "Enable this in Animations"; 
+		Duration = 7.5;
+	})
+end)
+
+ElderPress.Name = "ElderPress"
+ElderPress.Parent = Main
+ElderPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+ElderPress.Position = UDim2.new(5, 0, 3.69230795, 0)
+ElderPress.Size = UDim2.new(0, 111, 0, 32)
+ElderPress.Visible = false
+ElderPress.Font = Enum.Font.SourceSans
+ElderPress.Text = "Elder"
+ElderPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+ElderPress.TextScaled = true
+ElderPress.TextSize = 14.000
+ElderPress.TextWrapped = true
+ElderPress.MouseButton1Click:Connect(function()
+	ElderPress.Visible = false
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Elder Animation is off";
+		Text = "Enable this in Animations"; 
+		Duration = 7.5;
+	})
+end)
+
+LevitationPress.Name = "LevitationPress"
+LevitationPress.Parent = Main
+LevitationPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+LevitationPress.Position = UDim2.new(5, 0, 4.8846159, 0)
+LevitationPress.Size = UDim2.new(0, 111, 0, 32)
+LevitationPress.Visible = false
+LevitationPress.Font = Enum.Font.SourceSans
+LevitationPress.Text = "Levitation"
+LevitationPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+LevitationPress.TextScaled = true
+LevitationPress.TextSize = 14.000
+LevitationPress.TextWrapped = true
+LevitationPress.MouseButton1Click:Connect(function()
+	LevitationPress.Visible = false
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Levitation Animation is off";
+		Text = "Enable this in Animations"; 
+		Duration = 7.5;
+	})
+end)
+
+NoAnimPress.Name = "NoAnimPress"
+NoAnimPress.Parent = Main
+NoAnimPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+NoAnimPress.Position = UDim2.new(5, 0, 6.11538506, 0)
+NoAnimPress.Size = UDim2.new(0, 111, 0, 32)
+NoAnimPress.Visible = false
+NoAnimPress.Font = Enum.Font.SourceSans
+NoAnimPress.Text = "No Animation"
+NoAnimPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+NoAnimPress.TextScaled = true
+NoAnimPress.TextSize = 14.000
+NoAnimPress.TextWrapped = true
+NoAnimPress.MouseButton1Click:Connect(function()
+	NoAnimPress.Visible = false
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "No Animation is off";
+		Text = "Enable this in Animations"; 
+		Duration = 7.5;
+	})
+end)
+
+BubblyPress.Name = "BubblyPress"
+BubblyPress.Parent = Main
+BubblyPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+BubblyPress.Position = UDim2.new(5, 0, 7.34615421, 0)
+BubblyPress.Size = UDim2.new(0, 111, 0, 32)
+BubblyPress.Visible = false
+BubblyPress.Font = Enum.Font.SourceSans
+BubblyPress.Text = "Bubbly"
+BubblyPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+BubblyPress.TextScaled = true
+BubblyPress.TextSize = 14.000
+BubblyPress.TextWrapped = true
+BubblyPress.MouseButton1Click:Connect(function()
+	BubblyPress.Visible = false
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Bubbly Animation is off";
+		Text = "Enable this in Animations"; 
+		Duration = 7.5;
+	})
+end)
+
+CartoonyPress.Name = "CartoonyPress"
+CartoonyPress.Parent = Main
+CartoonyPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+CartoonyPress.Position = UDim2.new(5, 0, 8.57692337, 0)
+CartoonyPress.Size = UDim2.new(0, 111, 0, 32)
+CartoonyPress.Visible = false
+CartoonyPress.Font = Enum.Font.SourceSans
+CartoonyPress.Text = "Cartoony"
+CartoonyPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+CartoonyPress.TextScaled = true
+CartoonyPress.TextSize = 14.000
+CartoonyPress.TextWrapped = true
+CartoonyPress.MouseButton1Click:Connect(function()
+	CartoonyPress.Visible = false
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Cartoony Animation is off";
+		Text = "Enable this in Animations"; 
+		Duration = 7.5;
+	})
+end)
+
+KnightPress.Name = "KnightPress"
+KnightPress.Parent = Main
+KnightPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+KnightPress.Position = UDim2.new(5, 0, 9.80769253, 0)
+KnightPress.Size = UDim2.new(0, 111, 0, 32)
+KnightPress.Visible = false
+KnightPress.Font = Enum.Font.SourceSans
+KnightPress.Text = "Knights Walk"
+KnightPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+KnightPress.TextScaled = true
+KnightPress.TextSize = 14.000
+KnightPress.TextWrapped = true
+KnightPress.MouseButton1Click:Connect(function()
+	KnightPress.Visible = false
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Knight Animation is off";
+		Text = "Enable this in Animations"; 
+		Duration = 7.5;
+	})
+end)
+
+RobotsPress.Name = "RobotsPress"
+RobotsPress.Parent = Main
+RobotsPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+RobotsPress.Position = UDim2.new(5, 0, 11.0384617, 0)
+RobotsPress.Size = UDim2.new(0, 111, 0, 32)
+RobotsPress.Visible = false
+RobotsPress.Font = Enum.Font.SourceSans
+RobotsPress.Text = "Robot"
+RobotsPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+RobotsPress.TextScaled = true
+RobotsPress.TextSize = 14.000
+RobotsPress.TextWrapped = true
+RobotsPress.MouseButton1Click:Connect(function()
+	RobotsPress.Visible = false
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Robot Animation is off";
+		Text = "Enable this in Animations"; 
+		Duration = 7.5;
+	})
+end)
+
+StylishPress.Name = "StylishPress"
+StylishPress.Parent = Main
+StylishPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+StylishPress.Position = UDim2.new(5.00892878, 0, 12.2692308, 0)
+StylishPress.Size = UDim2.new(0, 111, 0, 32)
+StylishPress.Visible = false
+StylishPress.Font = Enum.Font.SourceSans
+StylishPress.Text = "Stylish"
+StylishPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+StylishPress.TextScaled = true
+StylishPress.TextSize = 14.000
+StylishPress.TextWrapped = true
+StylishPress.MouseButton1Click:Connect(function()
+	StylishPress.Visible = false
+	game.StarterGui:SetCore("SendNotification", {
+		Title = "Stylish Animation is off";
+		Text = "Enable this in Animations"; 
+		Duration = 7.5;
+	})
+end)
+
+Scripter.Name = "Scripter:"
+Scripter.Parent = Main
+Scripter.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Scripter.Position = UDim2.new(6.375, 0, 1.4615382, 0)
+Scripter.Size = UDim2.new(0, 88, 0, 101)
+Scripter.Font = Enum.Font.SciFi
+Scripter.Text = "DarkVap Team"
+Scripter.TextColor3 = Color3.fromRGB(255, 255, 255)
+Scripter.TextScaled = true
+Scripter.TextSize = 14.000
+Scripter.TextWrapped = true
+
+FreeCamPress.Name = "FreeCamPress"
+FreeCamPress.Parent = Main
+FreeCamPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+FreeCamPress.Position = UDim2.new(3.74107146, 0, 1.19230795, 0)
+FreeCamPress.Size = UDim2.new(0, 111, 0, 32)
+FreeCamPress.Visible = false
+FreeCamPress.Font = Enum.Font.SourceSans
+FreeCamPress.Text = "FreeCam"
+FreeCamPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+FreeCamPress.TextScaled = true
+FreeCamPress.TextSize = 14.000
+FreeCamPress.TextWrapped = true
+
+
+AntiVoidPress.Name = "AntiVoidPress"
+AntiVoidPress.Parent = Main
+AntiVoidPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+AntiVoidPress.Position = UDim2.new(3.74107146, 0, 2.46153855, 0)
+AntiVoidPress.Size = UDim2.new(0, 111, 0, 32)
+AntiVoidPress.Visible = false
+AntiVoidPress.Font = Enum.Font.SourceSans
+AntiVoidPress.Text = "Anti-Void"
+AntiVoidPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+AntiVoidPress.TextScaled = true
+AntiVoidPress.TextSize = 14.000
+AntiVoidPress.TextWrapped = true
+
+FlyJumpPress.Name = "FlyJumpPress"
+FlyJumpPress.Parent = Main
+FlyJumpPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+FlyJumpPress.Position = UDim2.new(3.74107146, 0, 3.69230771, 0)
+FlyJumpPress.Size = UDim2.new(0, 111, 0, 32)
+FlyJumpPress.Visible = false
+FlyJumpPress.Font = Enum.Font.SourceSans
+FlyJumpPress.Text = "FlyJump"
+FlyJumpPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+FlyJumpPress.TextScaled = true
+FlyJumpPress.TextSize = 14.000
+FlyJumpPress.TextWrapped = true
+	FlyJumpPress.MouseButton1Down:Connect(function()
+		StylishPress.Visible = false
+		game.StarterGui:SetCore("SendNotification", {
+			Title = "FlyJump is off";
+			Text = "Enable this in Local Player"; 
+			Duration = 7.5;
+		})
+	FlyJumpPress.Visible = false
+	local InfiniteJumpEnabled = false
+	game:GetService("UserInputService").JumpRequest:connect(function()
+		if InfiniteJumpEnabled then
+			game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+		end
+	end)
+end)
+
+EspPress.Name = "EspPress"
+EspPress.Parent = Main
+EspPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+EspPress.Position = UDim2.new(2.50892878, 0, 1.15384638, 0)
+EspPress.Size = UDim2.new(0, 111, 0, 32)
+EspPress.Visible = false
+EspPress.Font = Enum.Font.SourceSans
+EspPress.Text = "Esp"
+EspPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+EspPress.TextScaled = true
+EspPress.TextSize = 14.000
+EspPress.TextWrapped = true
+
+TracersPress.Name = "TracersPress"
+TracersPress.Parent = Main
+TracersPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+TracersPress.Position = UDim2.new(2.50892878, 0, 2.42307711, 0)
+TracersPress.Size = UDim2.new(0, 111, 0, 32)
+TracersPress.Visible = false
+TracersPress.Font = Enum.Font.SourceSans
+TracersPress.Text = "Tracers"
+TracersPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+TracersPress.TextScaled = true
+TracersPress.TextSize = 14.000
+TracersPress.TextWrapped = true
+
+WinterThemePress.Name = "WinterThemePress"
+WinterThemePress.Parent = Main
+WinterThemePress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+WinterThemePress.Position = UDim2.new(2.50892878, 0, 3.69230795, 0)
+WinterThemePress.Size = UDim2.new(0, 111, 0, 32)
+WinterThemePress.Visible = false
+WinterThemePress.Font = Enum.Font.SourceSans
+WinterThemePress.Text = "WinterTheme"
+WinterThemePress.TextColor3 = Color3.fromRGB(0, 0, 0)
+WinterThemePress.TextScaled = true
+WinterThemePress.TextSize = 14.000
+WinterThemePress.TextWrapped = true
+
+FlyPress.Name = "FlyPress"
+FlyPress.Parent = Main
+FlyPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+FlyPress.Position = UDim2.new(1.25000012, 0, 1.15384638, 0)
+FlyPress.Size = UDim2.new(0, 111, 0, 32)
+FlyPress.Visible = false
+FlyPress.Font = Enum.Font.SourceSans
+FlyPress.Text = "Fly"
+FlyPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+FlyPress.TextScaled = true
+FlyPress.TextSize = 14.000
+FlyPress.TextWrapped = true
+
+SpeedPress.Name = "SpeedPress"
+SpeedPress.Parent = Main
+SpeedPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+SpeedPress.Position = UDim2.new(1.25000012, 0, 2.46153855, 0)
+SpeedPress.Size = UDim2.new(0, 111, 0, 32)
+SpeedPress.Visible = false
+SpeedPress.Font = Enum.Font.SourceSans
+SpeedPress.Text = "Speed"
+SpeedPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+SpeedPress.TextScaled = true
+SpeedPress.TextSize = 14.000
+SpeedPress.TextWrapped = true
+
+AimAssistPress.Name = "AimAssistPress"
+AimAssistPress.Parent = Main
+AimAssistPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+AimAssistPress.Position = UDim2.new(1.1920929e-07, 0, 1.19230795, 0)
+AimAssistPress.Size = UDim2.new(0, 111, 0, 32)
+AimAssistPress.Visible = false
+AimAssistPress.Font = Enum.Font.SourceSans
+AimAssistPress.Text = "AimAssist"
+AimAssistPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+AimAssistPress.TextScaled = true
+AimAssistPress.TextSize = 14.000
+AimAssistPress.TextWrapped = true
+
+AutoClickerPress.Name = "AutoClickerPress"
+AutoClickerPress.Parent = Main
+AutoClickerPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+AutoClickerPress.Position = UDim2.new(1.1920929e-07, 0, 2.42307711, 0)
+AutoClickerPress.Size = UDim2.new(0, 111, 0, 32)
+AutoClickerPress.Visible = false
+AutoClickerPress.Font = Enum.Font.SourceSans
+AutoClickerPress.Text = "AutoClicker"
+AutoClickerPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+AutoClickerPress.TextScaled = true
+AutoClickerPress.TextSize = 14.000
+AutoClickerPress.TextWrapped = true
+
+KillAuraPress.Name = "KillAuraPress"
+KillAuraPress.Parent = Main
+KillAuraPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+KillAuraPress.Position = UDim2.new(1.1920929e-07, 0, 3.69230795, 0)
+KillAuraPress.Size = UDim2.new(0, 111, 0, 32)
+KillAuraPress.Visible = false
+KillAuraPress.Font = Enum.Font.SourceSans
+KillAuraPress.Text = "KillAura"
+KillAuraPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+KillAuraPress.TextScaled = true
+KillAuraPress.TextSize = 14.000
+KillAuraPress.TextWrapped = true
+
+AntiKnockbackPress.Name = "AntiKnockbackPress"
+AntiKnockbackPress.Parent = Main
+AntiKnockbackPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+AntiKnockbackPress.Position = UDim2.new(1.1920929e-07, 0, 4.8846159, 0)
+AntiKnockbackPress.Size = UDim2.new(0, 111, 0, 32)
+AntiKnockbackPress.Visible = false
+AntiKnockbackPress.Font = Enum.Font.SourceSans
+AntiKnockbackPress.Text = "Anti-Knockback"
+AntiKnockbackPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+AntiKnockbackPress.TextScaled = true
+AntiKnockbackPress.TextSize = 14.000
+AntiKnockbackPress.TextWrapped = true
+
+NoClickDelayPress.Name = "NoClickDelayPress"
+NoClickDelayPress.Parent = Main
+NoClickDelayPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+NoClickDelayPress.Position = UDim2.new(1.1920929e-07, 0, 6.15384626, 0)
+NoClickDelayPress.Size = UDim2.new(0, 111, 0, 32)
+NoClickDelayPress.Visible = false
+NoClickDelayPress.Font = Enum.Font.SourceSans
+NoClickDelayPress.Text = "NoClickDelay"
+NoClickDelayPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+NoClickDelayPress.TextScaled = true
+NoClickDelayPress.TextSize = 14.000
+NoClickDelayPress.TextWrapped = true
+
+
+
+OpenGui.Name = "OpenGui"
+OpenGui.Parent = ScreenGui
+OpenGui.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+OpenGui.Position = UDim2.new(0.887112916, 0, 0.866388321, 0)
+OpenGui.Size = UDim2.new(0, 88, 0, 42)
+OpenGui.Font = Enum.Font.SciFi
+OpenGui.Text = "Open Gui"
+OpenGui.TextColor3 = Color3.fromRGB(255, 255, 255)
+OpenGui.TextScaled = true
+OpenGui.TextSize = 14.000
+OpenGui.TextWrapped = true
+OpenGui.MouseButton1Down:Connect(function()
+	OpenGui.Visible = false
+	CloseGui.Visible = true
+	Main.Visible = true
+end)
+
+UICorner.Parent = OpenGui
+
+CloseGui.Name = "CloseGui"
+CloseGui.Parent = ScreenGui
+CloseGui.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CloseGui.Position = UDim2.new(0.887112916, 0, 0.866388321, 0)
+CloseGui.Size = UDim2.new(0, 88, 0, 42)
+CloseGui.Font = Enum.Font.SciFi
+CloseGui.Text = "Close Gui"
+CloseGui.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseGui.TextScaled = true
+CloseGui.TextSize = 14.000
+CloseGui.TextWrapped = true
+CloseGui.MouseButton1Down:Connect(function()
+	CloseGui.Visible = false
+	OpenGui.Visible = true
+	Main.Visible = false
+end)
+
+UICorner_2.Parent = CloseGui
+
+TextLabel_2.Parent = Main
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.Position = UDim2.new(0.618, 0, 8.091, 0)
+TextLabel_2.Size = UDim2.new(0, 438, 0, 120)
+TextLabel_2.Font = Enum.Font.SourceSansBold
+TextLabel_2.Text = "Make sure to subscribe to Darkvap Team on YouTube  for updates often. Always use alts when exploiting ---- DarkVap Team"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+wait(15)
+	TextLabel_2.Visible = false
+	local InfiniteJumpEnabled = false
+	game:GetService("UserInputService").JumpRequest:connect(function()
+		if InfiniteJumpEnabled then
+			game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+		end
+	end)
+end)
+
+EspPress.Name = "EspPress"
+EspPress.Parent = Main
+EspPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+EspPress.Position = UDim2.new(2.50892878, 0, 1.15384638, 0)
+EspPress.Size = UDim2.new(0, 111, 0, 32)
+EspPress.Visible = false
+EspPress.Font = Enum.Font.SourceSans
+EspPress.Text = "Esp"
+EspPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+EspPress.TextScaled = true
+EspPress.TextSize = 14.000
+EspPress.TextWrapped = true
+
+TracersPress.Name = "TracersPress"
+TracersPress.Parent = Main
+TracersPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+TracersPress.Position = UDim2.new(2.50892878, 0, 2.42307711, 0)
+TracersPress.Size = UDim2.new(0, 111, 0, 32)
+TracersPress.Visible = false
+TracersPress.Font = Enum.Font.SourceSans
+TracersPress.Text = "Tracers"
+TracersPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+TracersPress.TextScaled = true
+TracersPress.TextSize = 14.000
+TracersPress.TextWrapped = true
+
+WinterThemePress.Name = "WinterThemePress"
+WinterThemePress.Parent = Main
+WinterThemePress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+WinterThemePress.Position = UDim2.new(2.50892878, 0, 3.69230795, 0)
+WinterThemePress.Size = UDim2.new(0, 111, 0, 32)
+WinterThemePress.Visible = false
+WinterThemePress.Font = Enum.Font.SourceSans
+WinterThemePress.Text = "WinterTheme"
+WinterThemePress.TextColor3 = Color3.fromRGB(0, 0, 0)
+WinterThemePress.TextScaled = true
+WinterThemePress.TextSize = 14.000
+WinterThemePress.TextWrapped = true
+
+FlyPress.Name = "FlyPress"
+FlyPress.Parent = Main
+FlyPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+FlyPress.Position = UDim2.new(1.25000012, 0, 1.15384638, 0)
+FlyPress.Size = UDim2.new(0, 111, 0, 32)
+FlyPress.Visible = false
+FlyPress.Font = Enum.Font.SourceSans
+FlyPress.Text = "Fly"
+FlyPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+FlyPress.TextScaled = true
+FlyPress.TextSize = 14.000
+FlyPress.TextWrapped = true
+
+SpeedPress.Name = "SpeedPress"
+SpeedPress.Parent = Main
+SpeedPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+SpeedPress.Position = UDim2.new(1.25000012, 0, 2.46153855, 0)
+SpeedPress.Size = UDim2.new(0, 111, 0, 32)
+SpeedPress.Visible = false
+SpeedPress.Font = Enum.Font.SourceSans
+SpeedPress.Text = "Speed"
+SpeedPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+SpeedPress.TextScaled = true
+SpeedPress.TextSize = 14.000
+SpeedPress.TextWrapped = true
+
+AimAssistPress.Name = "AimAssistPress"
+AimAssistPress.Parent = Main
+AimAssistPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+AimAssistPress.Position = UDim2.new(1.1920929e-07, 0, 1.19230795, 0)
+AimAssistPress.Size = UDim2.new(0, 111, 0, 32)
+AimAssistPress.Visible = false
+AimAssistPress.Font = Enum.Font.SourceSans
+AimAssistPress.Text = "AimAssist"
+AimAssistPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+AimAssistPress.TextScaled = true
+AimAssistPress.TextSize = 14.000
+AimAssistPress.TextWrapped = true
+
+AutoClickerPress.Name = "AutoClickerPress"
+AutoClickerPress.Parent = Main
+AutoClickerPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+AutoClickerPress.Position = UDim2.new(1.1920929e-07, 0, 2.42307711, 0)
+AutoClickerPress.Size = UDim2.new(0, 111, 0, 32)
+AutoClickerPress.Visible = false
+AutoClickerPress.Font = Enum.Font.SourceSans
+AutoClickerPress.Text = "AutoClicker"
+AutoClickerPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+AutoClickerPress.TextScaled = true
+AutoClickerPress.TextSize = 14.000
+AutoClickerPress.TextWrapped = true
+
+KillAuraPress.Name = "KillAuraPress"
+KillAuraPress.Parent = Main
+KillAuraPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+KillAuraPress.Position = UDim2.new(1.1920929e-07, 0, 3.69230795, 0)
+KillAuraPress.Size = UDim2.new(0, 111, 0, 32)
+KillAuraPress.Visible = false
+KillAuraPress.Font = Enum.Font.SourceSans
+KillAuraPress.Text = "KillAura"
+KillAuraPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+KillAuraPress.TextScaled = true
+KillAuraPress.TextSize = 14.000
+KillAuraPress.TextWrapped = true
+
+AntiKnockbackPress.Name = "AntiKnockbackPress"
+AntiKnockbackPress.Parent = Main
+AntiKnockbackPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+AntiKnockbackPress.Position = UDim2.new(1.1920929e-07, 0, 4.8846159, 0)
+AntiKnockbackPress.Size = UDim2.new(0, 111, 0, 32)
+AntiKnockbackPress.Visible = false
+AntiKnockbackPress.Font = Enum.Font.SourceSans
+AntiKnockbackPress.Text = "Anti-Knockback"
+AntiKnockbackPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+AntiKnockbackPress.TextScaled = true
+AntiKnockbackPress.TextSize = 14.000
+AntiKnockbackPress.TextWrapped = true
+
+NoClickDelayPress.Name = "NoClickDelayPress"
+NoClickDelayPress.Parent = Main
+NoClickDelayPress.BackgroundColor3 = Color3.fromRGB(0, 206, 206)
+NoClickDelayPress.Position = UDim2.new(1.1920929e-07, 0, 6.15384626, 0)
+NoClickDelayPress.Size = UDim2.new(0, 111, 0, 32)
+NoClickDelayPress.Visible = false
+NoClickDelayPress.Font = Enum.Font.SourceSans
+NoClickDelayPress.Text = "NoClickDelay"
+NoClickDelayPress.TextColor3 = Color3.fromRGB(0, 0, 0)
+NoClickDelayPress.TextScaled = true
+NoClickDelayPress.TextSize = 14.000
+NoClickDelayPress.TextWrapped = true
+
+
+
+OpenGui.Name = "OpenGui"
+OpenGui.Parent = ScreenGui
+OpenGui.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+OpenGui.Position = UDim2.new(0.887112916, 0, 0.866388321, 0)
+OpenGui.Size = UDim2.new(0, 88, 0, 42)
+OpenGui.Font = Enum.Font.SciFi
+OpenGui.Text = "Open Gui"
+OpenGui.TextColor3 = Color3.fromRGB(255, 255, 255)
+OpenGui.TextScaled = true
+OpenGui.TextSize = 14.000
+OpenGui.TextWrapped = true
+OpenGui.MouseButton1Down:Connect(function()
+	OpenGui.Visible = false
+	CloseGui.Visible = true
+	Main.Visible = true
+end)
+
+UICorner.Parent = OpenGui
+
+CloseGui.Name = "CloseGui"
+CloseGui.Parent = ScreenGui
+CloseGui.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+CloseGui.Position = UDim2.new(0.887112916, 0, 0.866388321, 0)
+CloseGui.Size = UDim2.new(0, 88, 0, 42)
+CloseGui.Font = Enum.Font.SciFi
+CloseGui.Text = "Close Gui"
+CloseGui.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseGui.TextScaled = true
+CloseGui.TextSize = 14.000
+CloseGui.TextWrapped = true
+CloseGui.MouseButton1Down:Connect(function()
+	CloseGui.Visible = false
+	OpenGui.Visible = true
+	Main.Visible = false
+end)
+
+UICorner_2.Parent = CloseGui
+
+TextLabel_2.Parent = Main
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.Position = UDim2.new(0.618, 0, 8.091, 0)
+TextLabel_2.Size = UDim2.new(0, 438, 0, 120)
+TextLabel_2.Font = Enum.Font.SourceSansBold
+TextLabel_2.Text = "Make sure to subscribe to Darkvap Team on YouTube  for updates often. Always use alts when exploiting ---- DarkVap Team"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+wait(15)
+	TextLabel_2.Visible = false
+	
+
